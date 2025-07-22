@@ -21,9 +21,9 @@ The only official sources are:
 >>> IGNORE BELOW THIS LINE <<<
 -->
 
-<!-- no offical site warning -->
+<!-- no official site warning -->
 > [!CAUTION]
-> We do **not** have a website. The only offical place to download Natro Macro is this repository and [discord.gg/natromacro][discord-link].
+> We do **not** have a website. The only official place to download Natro Macro is this repository and [discord.gg/natromacro][discord-link].
 
 <div align="center">
 
@@ -57,7 +57,7 @@ An open-source Bee Swarm Simulator macro written in AutoHotkey!<br>
 
 This is where you can connect with the community, access guides and help channels, and download custom patterns, paths, and themes!
 
-Discord is our main platform for troubleshooting and update news!
+Discord is our primary platform for troubleshooting and receiving update news.
 
 <a href="https://discord.gg/natromacro">
   <picture>
