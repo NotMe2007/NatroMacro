@@ -3,9 +3,6 @@
 #Include "Gdip_All.ahk"
 #Include "Gdip_ImageSearch.ahk"
 
-global windowX := 0, windowY := 0, windowHeight := 0
-bitmaps := Map()
-
 nm_InventorySearch(item, direction:="down", prescroll:=0, prescrolldir:="", scrolltoend:=1, max:=70) {
     ; Validate parameters
     if (!item) {
@@ -15,8 +12,8 @@ nm_InventorySearch(item, direction:="down", prescroll:=0, prescrolldir:="", scro
         return "Error: Invalid direction. Use 'down' or 'up'."
     }
 
-    global bitmaps
-    static hRoblox := 0, l := 0
+    global windowX, windowY, windowHeight
+    static hRoblox := 0, l := 0, bitmaps := Map()
 
     nm_OpenMenu("itemmenu")
 
