@@ -14,7 +14,7 @@ body:
         - Natro Macro is maintained by volunteers. Please be patient when waiting for a response.
         - Remember to include sufficient details and context.
         - If you have multiple features to suggest, please submit them in separate issues.
-        - We accept pull requests. If you know how to code it - go ahead!
+        - We accept pull requests. If you know how to code it, go ahead!
 
   - type: dropdown
     attributes:
