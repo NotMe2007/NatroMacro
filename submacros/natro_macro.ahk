@@ -662,6 +662,7 @@ nm_importConfig()
 		, "LastWhirligig", 1
 		, "LastEnzymes", 1
 		, "LastGlitter", 1
+		, "LastTradingHubCorrection", 1
 		, "LastMicroConverter", 1
 		, "LastGuid", 1
 		, "AutoFieldBoostActive", 0
@@ -4067,6 +4068,25 @@ nm_TabMiscUnLock(){
 ;update config
 nm_saveConfig(GuiCtrl, *){
 	global
+	
+	; Special validation for Trading Hub field pattern
+	if (GuiCtrl.Type = "DDL" && InStr(GuiCtrl.Name, "FieldPattern")) {
+		; Get the field number (1, 2, or 3)
+		fieldNum := RegExReplace(GuiCtrl.Name, "FieldPattern(\d+)", "$1")
+		fieldNameVar := "FieldName" . fieldNum
+		
+		; Check if Trading Hub is selected and pattern is not Squares
+		if (%fieldNameVar% = "Trading Hub" && GuiCtrl.Text != "Squares") {
+			; Show warning message
+			MsgBox("WARNING!!! This field pattern is not corrected for Trading Hub field so it will not work as expected.`n`nTrading Hub field only supports 'Squares' pattern.", "Pattern Warning", "OK Iconwarning")
+			; Reset to Squares pattern
+			GuiCtrl.Text := "Squares"
+			%GuiCtrl.Name% := "Squares"
+			IniWrite "Squares", "settings\nm_config.ini", GuiCtrl.Section, GuiCtrl.Name
+			return
+		}
+	}
+	
 	switch GuiCtrl.Type, 0 {
 		case "DDL":
 		%GuiCtrl.Name% := GuiCtrl.Text
@@ -4378,6 +4398,14 @@ nm_FieldDefaults(num){
 		FieldDriftCheck%num%:=1
 	} else {
 		FieldPattern%num%:=FieldDefault[FieldName%num%]["pattern"]
+		
+		; Special handling for Trading Hub - force Squares pattern
+		if (FieldName%num% = "Trading Hub" && FieldPattern%num% != "Squares") {
+			FieldPattern%num% := "Squares"
+			; Show warning message
+			MsgBox("Trading Hub field automatically set to 'Squares' pattern.`n`nWARNING!!! Other field patterns are not corrected for Trading Hub field so they will not work as expected.", "Trading Hub Pattern Override", "OK Iconinfo")
+		}
+		
 		FieldPatternSize%num%:=FieldDefault[FieldName%num%]["size"]
 		FieldPatternReps%num%:=FieldDefault[FieldName%num%]["width"]
 		FieldPatternShift%num%:=FieldDefault[FieldName%num%]["shiftlock"]
