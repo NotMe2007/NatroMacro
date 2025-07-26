@@ -1,5 +1,4 @@
-﻿if (MoveMethod = "walk")
-{
+﻿if (MoveMethod = "walk") {
 	nm_gotoramp()
 	nm_Walk(67.5, BackKey, LeftKey)
 	send "{" RotRight " 4}"
@@ -17,24 +16,22 @@
 	nm_Walk(29.7, LeftKey)
 	nm_Walk(11.25, FwdKey)
 	nm_Walk(13.5, LeftKey)
-}
-else
-{
+} else {
 	nm_gotoramp()
-	Send "{space down}{" RightKey " down}"
-	Sleep 100
-	Send "{space up}"
-	Walk(2)
-	Send "{" FwdKey " down}"
-	Walk(1.8)
-	Send "{" FwdKey " up}"
-	Walk(30)
+	send "{space down}{" RightKey " down}"
+	Sleep(100)
+	send "{space up}"
+	nm_Walk(2, FwdKey)
+	send "{" FwdKey " down}"
+	nm_Walk(1.8, FwdKey)
+	send "{" FwdKey " up}"
+	nm_Walk(30, FwdKey)
 	send "{space down}"
 	HyperSleep(300)
 	send "{space up}{" FwdKey " down}"
-	Walk(4)
+	nm_Walk(4, FwdKey)
 	send "{" FwdKey " up}"
-	Walk(3)
+	nm_Walk(3, FwdKey)
 	send "{" RightKey " up}{" RotRight " 2}{space down}"
 	HyperSleep(100)
 	send "{space up}"
@@ -56,4 +53,4 @@ else
 	nm_Walk(3, FwdKey, LeftKey)
 	nm_Walk(5, FwdKey, RightKey)
 }
-;path 230629 noobyguy
+; path 230629 noobyguy

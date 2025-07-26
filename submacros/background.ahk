@@ -38,22 +38,22 @@ global MacroState := 0  ; 0=stopped, 1=paused, 2=running
 
 ; Process command line arguments if provided
 if (A_Args.Length >= 4) {
-    NightLastDetected := A_Args[1]
-    VBLastKilled := A_Args[2] 
-    StingerCheck := A_Args[3]
-    StingerDailyBonusCheck := A_Args[4]
+	NightLastDetected := A_Args[1]
+	VBLastKilled := A_Args[2] 
+	StingerCheck := A_Args[3]
+	StingerDailyBonusCheck := A_Args[4]
 }
 if (A_Args.Length >= 8) {
-    AnnounceGuidingStar := A_Args[5]
-    ReconnectInterval := A_Args[6]
-    ReconnectHour := A_Args[7]
-    ReconnectMin := A_Args[8]
+	AnnounceGuidingStar := A_Args[5]
+	ReconnectInterval := A_Args[6]
+	ReconnectHour := A_Args[7]
+	ReconnectMin := A_Args[8]
 }
 if (A_Args.Length >= 12) {
-    EmergencyBalloonPingCheck := A_Args[9]
-    ConvertBalloon := A_Args[10]
-    NightMemoryMatchCheck := A_Args[11]
-    LastNightMemoryMatch := A_Args[12]
+	EmergencyBalloonPingCheck := A_Args[9]
+	ConvertBalloon := A_Args[10]
+	NightMemoryMatchCheck := A_Args[11]
+	LastNightMemoryMatch := A_Args[12]
 }
 
 ; Ensure required functions and variables are defined.
@@ -507,11 +507,12 @@ nm_setGlobalInt(wParam, lParam, *)
 {
 	global
 	Critical
-	; enumeration
-	#Include "%A_ScriptDir%\..\lib\enum\EnumInt.ahk"
+
 
 	local var := arr[wParam]
-	try %var% := lParam
+		try {
+			%var% := lParam
+		}
 	return 0
 }
 
@@ -519,20 +520,21 @@ nm_setGlobalStr(wParam, lParam, *)
 {
 	global
 	Critical
-	; enumeration
-	#Include "%A_ScriptDir%\..\lib\enum\EnumStr.ahk"
+
 	static sections := ["Boost","Collect","Gather","Planters","Quests","Settings","Status","Blender","Shrine"]
 
 	local var := arr[wParam], section := sections[lParam]
-	try %var% := IniRead("settings\nm_config.ini", section, var)
+		try {
+			%var% := IniRead("settings\nm_config.ini", section, var)
+		}
 	return 0
 }
 
 Send_WM_COPYDATA(StringToSend, TargetScriptTitle, wParam:=0)
 {
-    CopyDataStruct := Buffer(3*A_PtrSize)
-    SizeInBytes := (StrLen(StringToSend) + 1) * 2
-    NumPut("Ptr", SizeInBytes
+	CopyDataStruct := Buffer(3*A_PtrSize)
+	SizeInBytes := (StrLen(StringToSend) + 1) * 2
+	NumPut("Ptr", SizeInBytes
 		, "Ptr", StrPtr(StringToSend)
 		, CopyDataStruct, A_PtrSize)
 
