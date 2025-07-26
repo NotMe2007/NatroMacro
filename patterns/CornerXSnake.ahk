@@ -1,4 +1,16 @@
-﻿send "{" TCLRKey " down}"
+﻿#Include ..\lib\Walk.ahk
+#Include ..\lib\HyperSleep.ahk
+
+; Key assignments (ensure these match your macro's config)
+TCFBKey := "w"
+TCLRKey := "a"
+AFCFBKey := "s"
+AFCLRKey := "d"
+
+; Default values for size and reps if not set externally
+size := IsSet(size) ? size : 1
+reps := IsSet(reps) ? reps : 1
+send "{" TCLRKey " down}"
 Walk(4 * size)
 send "{" TCLRKey " up}{" TCFBKey " down}"
 Walk(2 * size)

@@ -11,6 +11,503 @@ Natro Macro is distributed in the hope that it will be useful. This does not giv
 
 You should have received a copy of the license along with Natro Macro. If not, please redownload from an official source.
 */
+; Stub for nm_PBoost to resolve missing variable/function error
+nm_PBoost() {
+	return 0
+}
+; More global/config variable initializations
+AnnounceGuidingStar := IsSet(AnnounceGuidingStar) ? AnnounceGuidingStar : 0
+TimersOpen := IsSet(TimersOpen) ? TimersOpen : 0
+NewWalk := IsSet(NewWalk) ? NewWalk : 0
+GatherDoubleReset := IsSet(GatherDoubleReset) ? GatherDoubleReset : 0
+PolarQuestGatherInterruptCheck := IsSet(PolarQuestGatherInterruptCheck) ? PolarQuestGatherInterruptCheck : 0
+QuestGatherMins := IsSet(QuestGatherMins) ? QuestGatherMins : 1
+; More variable initializations for nectar, planter glitter, harvest, and session variables
+totalCom := IsSet(totalCom) ? totalCom : 0
+totalMot := IsSet(totalMot) ? totalMot : 0
+totalRef := IsSet(totalRef) ? totalRef : 0
+totalSat := IsSet(totalSat) ? totalSat : 0
+totalInv := IsSet(totalInv) ? totalInv : 0
+PlanterGlitterC1 := IsSet(PlanterGlitterC1) ? PlanterGlitterC1 : 0
+PlanterGlitterC2 := IsSet(PlanterGlitterC2) ? PlanterGlitterC2 : 0
+PlanterGlitterC3 := IsSet(PlanterGlitterC3) ? PlanterGlitterC3 : 0
+PlanterGlitter1 := IsSet(PlanterGlitter1) ? PlanterGlitter1 : 0
+PlanterGlitter2 := IsSet(PlanterGlitter2) ? PlanterGlitter2 : 0
+PlanterGlitter3 := IsSet(PlanterGlitter3) ? PlanterGlitter3 : 0
+PlanterHarvestNow1 := IsSet(PlanterHarvestNow1) ? PlanterHarvestNow1 : 0
+PlanterHarvestNow2 := IsSet(PlanterHarvestNow2) ? PlanterHarvestNow2 : 0
+PlanterHarvestNow3 := IsSet(PlanterHarvestNow3) ? PlanterHarvestNow3 : 0
+PlanterHarvestFull1 := IsSet(PlanterHarvestFull1) ? PlanterHarvestFull1 : 0
+PlanterHarvestFull2 := IsSet(PlanterHarvestFull2) ? PlanterHarvestFull2 : 0
+PlanterHarvestFull3 := IsSet(PlanterHarvestFull3) ? PlanterHarvestFull3 : 0
+SessionTotalHoney := IsSet(SessionTotalHoney) ? SessionTotalHoney : 0
+HoneyAverage := IsSet(HoneyAverage) ? HoneyAverage : 0
+; More variable initializations for quest progress and planter variables
+BuckoQuestProgress := IsSet(BuckoQuestProgress) ? BuckoQuestProgress : ""
+BlackQuestProgress := IsSet(BlackQuestProgress) ? BlackQuestProgress : ""
+BrownQuestProgress := IsSet(BrownQuestProgress) ? BrownQuestProgress : ""
+PlanterNectar1 := IsSet(PlanterNectar1) ? PlanterNectar1 : ""
+PlanterNectar2 := IsSet(PlanterNectar2) ? PlanterNectar2 : ""
+PlanterNectar3 := IsSet(PlanterNectar3) ? PlanterNectar3 : ""
+PlanterEstPercent1 := IsSet(PlanterEstPercent1) ? PlanterEstPercent1 : 0
+PlanterEstPercent2 := IsSet(PlanterEstPercent2) ? PlanterEstPercent2 : 0
+PlanterEstPercent3 := IsSet(PlanterEstPercent3) ? PlanterEstPercent3 : 0
+LastComfortingField := IsSet(LastComfortingField) ? LastComfortingField : ""
+LastMotivatingField := IsSet(LastMotivatingField) ? LastMotivatingField : ""
+LastSatisfyingField := IsSet(LastSatisfyingField) ? LastSatisfyingField : ""
+LastRefreshingField := IsSet(LastRefreshingField) ? LastRefreshingField : ""
+LastInvigoratingField := IsSet(LastInvigoratingField) ? LastInvigoratingField : ""
+PlanterSS1 := IsSet(PlanterSS1) ? PlanterSS1 : 0
+PlanterSS2 := IsSet(PlanterSS2) ? PlanterSS2 : 0
+PlanterSS3 := IsSet(PlanterSS3) ? PlanterSS3 : 0
+MPlanterSmoking1 := IsSet(MPlanterSmoking1) ? MPlanterSmoking1 : 0
+MPlanterSmoking2 := IsSet(MPlanterSmoking2) ? MPlanterSmoking2 : 0
+MPlanterSmoking3 := IsSet(MPlanterSmoking3) ? MPlanterSmoking3 : 0
+; More variable initializations for remaining errors
+StingerPepperCheck := IsSet(StingerPepperCheck) ? StingerPepperCheck : 0
+StingerMountainTopCheck := IsSet(StingerMountainTopCheck) ? StingerMountainTopCheck : 0
+StingerRoseCheck := IsSet(StingerRoseCheck) ? StingerRoseCheck : 0
+StingerCactusCheck := IsSet(StingerCactusCheck) ? StingerCactusCheck : 0
+StingerSpiderCheck := IsSet(StingerSpiderCheck) ? StingerSpiderCheck : 0
+StingerCloverCheck := IsSet(StingerCloverCheck) ? StingerCloverCheck : 0
+dayorNight := IsSet(dayorNight) ? dayorNight : ""
+LastHotkey2 := IsSet(LastHotkey2) ? LastHotkey2 : ""
+LastHotkey3 := IsSet(LastHotkey3) ? LastHotkey3 : ""
+LastHotkey4 := IsSet(LastHotkey4) ? LastHotkey4 : ""
+LastHotkey5 := IsSet(LastHotkey5) ? LastHotkey5 : ""
+LastHotkey6 := IsSet(LastHotkey6) ? LastHotkey6 : ""
+LastHotkey7 := IsSet(LastHotkey7) ? LastHotkey7 : ""
+QuestBoostCheck := IsSet(QuestBoostCheck) ? QuestBoostCheck : 0
+HoneyQuestCheck := IsSet(HoneyQuestCheck) ? HoneyQuestCheck : 0
+HoneyQuestProgress := IsSet(HoneyQuestProgress) ? HoneyQuestProgress : ""
+PolarQuestProgress := IsSet(PolarQuestProgress) ? PolarQuestProgress : ""
+RileyQuestProgress := IsSet(RileyQuestProgress) ? RileyQuestProgress : ""
+; Additional variable initializations for remaining errors
+StrawberryBoosterCheck := IsSet(StrawberryBoosterCheck) ? StrawberryBoosterCheck : 1
+MPlanterHold1 := IsSet(MPlanterHold1) ? MPlanterHold1 : 0
+MPlanterHold2 := IsSet(MPlanterHold2) ? MPlanterHold2 : 0
+MPlanterHold3 := IsSet(MPlanterHold3) ? MPlanterHold3 : 0
+PlanterField1 := IsSet(PlanterField1) ? PlanterField1 : ""
+PlanterField2 := IsSet(PlanterField2) ? PlanterField2 : ""
+PlanterField3 := IsSet(PlanterField3) ? PlanterField3 : ""
+PlanterHarvestTime1 := IsSet(PlanterHarvestTime1) ? PlanterHarvestTime1 : 0
+PlanterHarvestTime2 := IsSet(PlanterHarvestTime2) ? PlanterHarvestTime2 : 0
+PlanterHarvestTime3 := IsSet(PlanterHarvestTime3) ? PlanterHarvestTime3 : 0
+PlanterName1 := IsSet(PlanterName1) ? PlanterName1 : ""
+PlanterName2 := IsSet(PlanterName2) ? PlanterName2 : ""
+PlanterName3 := IsSet(PlanterName3) ? PlanterName3 : ""
+BrownQuestCheck := IsSet(BrownQuestCheck) ? BrownQuestCheck : 0
+PolarQuestCheck := IsSet(PolarQuestCheck) ? PolarQuestCheck : 0
+PublicFallback := IsSet(PublicFallback) ? PublicFallback : 0
+ReconnectMessage := IsSet(ReconnectMessage) ? ReconnectMessage : 0
+StingerDailyBonusCheck := IsSet(StingerDailyBonusCheck) ? StingerDailyBonusCheck : 0
+; Remaining field booster, boost/field check, and misc variable initializations
+FieldBooster1 := IsSet(FieldBooster1) ? FieldBooster1 : "None"
+FieldBooster2 := IsSet(FieldBooster2) ? FieldBooster2 : "None"
+FieldBooster3 := IsSet(FieldBooster3) ? FieldBooster3 : "None"
+BlueFlowerBoosterCheck := IsSet(BlueFlowerBoosterCheck) ? BlueFlowerBoosterCheck : 1
+BambooBoosterCheck := IsSet(BambooBoosterCheck) ? BambooBoosterCheck : 1
+PineTreeBoosterCheck := IsSet(PineTreeBoosterCheck) ? PineTreeBoosterCheck : 1
+StumpBoosterCheck := IsSet(StumpBoosterCheck) ? StumpBoosterCheck : 1
+DandelionBoosterCheck := IsSet(DandelionBoosterCheck) ? DandelionBoosterCheck : 1
+SunflowerBoosterCheck := IsSet(SunflowerBoosterCheck) ? SunflowerBoosterCheck : 1
+CloverBoosterCheck := IsSet(CloverBoosterCheck) ? CloverBoosterCheck : 1
+SpiderBoosterCheck := IsSet(SpiderBoosterCheck) ? SpiderBoosterCheck : 1
+PineappleBoosterCheck := IsSet(PineappleBoosterCheck) ? PineappleBoosterCheck : 1
+CactusBoosterCheck := IsSet(CactusBoosterCheck) ? CactusBoosterCheck : 1
+PumpkinBoosterCheck := IsSet(PumpkinBoosterCheck) ? PumpkinBoosterCheck : 1
+MushroomBoosterCheck := IsSet(MushroomBoosterCheck) ? MushroomBoosterCheck : 1
+RoseBoosterCheck := IsSet(RoseBoosterCheck) ? RoseBoosterCheck : 1
+PepperBoosterCheck := IsSet(PepperBoosterCheck) ? PepperBoosterCheck : 1
+WreathCheck := IsSet(WreathCheck) ? WreathCheck : 0
+PFieldBoostExtend := IsSet(PFieldBoostExtend) ? PFieldBoostExtend : 0
+PPopStarExtend := IsSet(PPopStarExtend) ? PPopStarExtend : 0
+; Remaining Bugrun, StumpSnail, Commando, TunnelBear, KingBeetle, amulet mode, and field/boost tracking variable initializations
+BugrunRhinoBeetlesCheck := IsSet(BugrunRhinoBeetlesCheck) ? BugrunRhinoBeetlesCheck : 0
+BugrunRhinoBeetlesLoot := IsSet(BugrunRhinoBeetlesLoot) ? BugrunRhinoBeetlesLoot : 0
+BugrunMantisCheck := IsSet(BugrunMantisCheck) ? BugrunMantisCheck : 0
+BugrunMantisLoot := IsSet(BugrunMantisLoot) ? BugrunMantisLoot : 0
+BugrunWerewolfCheck := IsSet(BugrunWerewolfCheck) ? BugrunWerewolfCheck : 0
+BugrunWerewolfLoot := IsSet(BugrunWerewolfLoot) ? BugrunWerewolfLoot : 0
+BugrunScorpionsCheck := IsSet(BugrunScorpionsCheck) ? BugrunScorpionsCheck : 0
+BugrunScorpionsLoot := IsSet(BugrunScorpionsLoot) ? BugrunScorpionsLoot : 0
+StumpSnailCheck := IsSet(StumpSnailCheck) ? StumpSnailCheck : 0
+CommandoCheck := IsSet(CommandoCheck) ? CommandoCheck : 0
+TunnelBearCheck := IsSet(TunnelBearCheck) ? TunnelBearCheck : 0
+TunnelBearBabyCheck := IsSet(TunnelBearBabyCheck) ? TunnelBearBabyCheck : 0
+KingBeetleCheck := IsSet(KingBeetleCheck) ? KingBeetleCheck : 0
+KingBeetleBabyCheck := IsSet(KingBeetleBabyCheck) ? KingBeetleBabyCheck : 0
+KingBeetleAmuletMode := IsSet(KingBeetleAmuletMode) ? KingBeetleAmuletMode : 0
+ShellAmuletMode := IsSet(ShellAmuletMode) ? ShellAmuletMode : 0
+PFieldGuidExtend := IsSet(PFieldGuidExtend) ? PFieldGuidExtend : 0
+PFieldGuidExtendMins := IsSet(PFieldGuidExtendMins) ? PFieldGuidExtendMins : 0
+; Remaining StickerStack, Shrine, boost/field, DisableToolUse, Mondo, and Bugrun variable initializations
+StickerStackCub := IsSet(StickerStackCub) ? StickerStackCub : 0
+StickerStackVoucher := IsSet(StickerStackVoucher) ? StickerStackVoucher : 0
+ShrineItem1 := IsSet(ShrineItem1) ? ShrineItem1 : "None"
+ShrineItem2 := IsSet(ShrineItem2) ? ShrineItem2 : "None"
+ShrineAmount1 := IsSet(ShrineAmount1) ? ShrineAmount1 : 0
+ShrineAmount2 := IsSet(ShrineAmount2) ? ShrineAmount2 : 0
+ShrineIndex1 := IsSet(ShrineIndex1) ? ShrineIndex1 : 1
+ShrineIndex2 := IsSet(ShrineIndex2) ? ShrineIndex2 : 1
+LastBlueBoost := IsSet(LastBlueBoost) ? LastBlueBoost : 1
+LastRedBoost := IsSet(LastRedBoost) ? LastRedBoost : 1
+LastMountainBoost := IsSet(LastMountainBoost) ? LastMountainBoost : 1
+DisableToolUse := IsSet(DisableToolUse) ? DisableToolUse : 0
+MondoBuffCheck := IsSet(MondoBuffCheck) ? MondoBuffCheck : 0
+PMondoGuid := IsSet(PMondoGuid) ? PMondoGuid : 0
+BugrunSpiderCheck := IsSet(BugrunSpiderCheck) ? BugrunSpiderCheck : 0
+BugrunSpiderLoot := IsSet(BugrunSpiderLoot) ? BugrunSpiderLoot : 0
+BugrunLadybugsCheck := IsSet(BugrunLadybugsCheck) ? BugrunLadybugsCheck : 0
+BugrunLadybugsLoot := IsSet(BugrunLadybugsLoot) ? BugrunLadybugsLoot : 0
+; Remaining Gingerbread, SnowMachine, Candles, Samovar, LidArt, GummyBeacon, RBPDelevel, MemoryMatch, Honeystorm, and StickerStackHive variable initializations
+GingerbreadCheck := IsSet(GingerbreadCheck) ? GingerbreadCheck : 0
+LastGingerbread := IsSet(LastGingerbread) ? LastGingerbread : 1
+SnowMachineCheck := IsSet(SnowMachineCheck) ? SnowMachineCheck : 0
+LastSnowMachine := IsSet(LastSnowMachine) ? LastSnowMachine : 1
+CandlesCheck := IsSet(CandlesCheck) ? CandlesCheck : 0
+LastCandles := IsSet(LastCandles) ? LastCandles : 1
+SamovarCheck := IsSet(SamovarCheck) ? SamovarCheck : 0
+LastSamovar := IsSet(LastSamovar) ? LastSamovar : 1
+LidArtCheck := IsSet(LidArtCheck) ? LidArtCheck : 0
+LastLidArt := IsSet(LastLidArt) ? LastLidArt : 1
+GummyBeaconCheck := IsSet(GummyBeaconCheck) ? GummyBeaconCheck : 0
+LastGummyBeacon := IsSet(LastGummyBeacon) ? LastGummyBeacon : 1
+RBPDelevelCheck := IsSet(RBPDelevelCheck) ? RBPDelevelCheck : 0
+LastRBPDelevel := IsSet(LastRBPDelevel) ? LastRBPDelevel : 1
+NormalMemoryMatchCheck := IsSet(NormalMemoryMatchCheck) ? NormalMemoryMatchCheck : 0
+MegaMemoryMatchCheck := IsSet(MegaMemoryMatchCheck) ? MegaMemoryMatchCheck : 0
+ExtremeMemoryMatchCheck := IsSet(ExtremeMemoryMatchCheck) ? ExtremeMemoryMatchCheck : 0
+NightMemoryMatchCheck := IsSet(NightMemoryMatchCheck) ? NightMemoryMatchCheck : 0
+WinterMemoryMatchCheck := IsSet(WinterMemoryMatchCheck) ? WinterMemoryMatchCheck : 0
+LastNormalMemoryMatch := IsSet(LastNormalMemoryMatch) ? LastNormalMemoryMatch : 1
+LastMegaMemoryMatch := IsSet(LastMegaMemoryMatch) ? LastMegaMemoryMatch : 1
+LastExtremeMemoryMatch := IsSet(LastExtremeMemoryMatch) ? LastExtremeMemoryMatch : 1
+LastNightMemoryMatch := IsSet(LastNightMemoryMatch) ? LastNightMemoryMatch : 1
+LastWinterMemoryMatch := IsSet(LastWinterMemoryMatch) ? LastWinterMemoryMatch : 1
+HoneystormCheck := IsSet(HoneystormCheck) ? HoneystormCheck : 0
+StickerStackHive := IsSet(StickerStackHive) ? StickerStackHive : 0
+; Remaining Blender, Collect tab, and Beesmas/Stockings/Feast variable initializations
+BlenderTime1 := IsSet(BlenderTime1) ? BlenderTime1 : 0
+BlenderTime2 := IsSet(BlenderTime2) ? BlenderTime2 : 0
+BlenderTime3 := IsSet(BlenderTime3) ? BlenderTime3 : 0
+BlenderAmount1 := IsSet(BlenderAmount1) ? BlenderAmount1 : 0
+BlenderAmount2 := IsSet(BlenderAmount2) ? BlenderAmount2 : 0
+BlenderAmount3 := IsSet(BlenderAmount3) ? BlenderAmount3 : 0
+BlenderCount1 := IsSet(BlenderCount1) ? BlenderCount1 : 0
+BlenderCount2 := IsSet(BlenderCount2) ? BlenderCount2 : 0
+BlenderCount3 := IsSet(BlenderCount3) ? BlenderCount3 : 0
+RoboPassCheck := IsSet(RoboPassCheck) ? RoboPassCheck : 0
+HoneyDisCheck := IsSet(HoneyDisCheck) ? HoneyDisCheck : 0
+TreatDisCheck := IsSet(TreatDisCheck) ? TreatDisCheck : 0
+BlueberryDisCheck := IsSet(BlueberryDisCheck) ? BlueberryDisCheck : 0
+StrawberryDisCheck := IsSet(StrawberryDisCheck) ? StrawberryDisCheck : 0
+GlueDisCheck := IsSet(GlueDisCheck) ? GlueDisCheck : 0
+RoyalJellyDisCheck := IsSet(RoyalJellyDisCheck) ? RoyalJellyDisCheck : 0
+StockingsCheck := IsSet(StockingsCheck) ? StockingsCheck : 0
+LastStockings := IsSet(LastStockings) ? LastStockings : 1
+FeastCheck := IsSet(FeastCheck) ? FeastCheck : 0
+LastFeast := IsSet(LastFeast) ? LastFeast : 1
+; Remaining GUI and logic variable initializations to prevent 'variable not assigned' errors
+ClickCount := IsSet(ClickCount) ? ClickCount : 1000
+ClickDelay := IsSet(ClickDelay) ? ClickDelay : 10
+ClickDuration := IsSet(ClickDuration) ? ClickDuration : 50
+ShowOnPause := IsSet(ShowOnPause) ? ShowOnPause : 0
+priorityListNumeric := IsSet(priorityListNumeric) ? priorityListNumeric : 12345678
+BeesmasGatherInterruptCheck := IsSet(BeesmasGatherInterruptCheck) ? BeesmasGatherInterruptCheck : 0
+BugrunInterruptCheck := IsSet(BugrunInterruptCheck) ? BugrunInterruptCheck : 0
+MemoryMatchInterruptCheck := IsSet(MemoryMatchInterruptCheck) ? MemoryMatchInterruptCheck : 0
+MultiReset := IsSet(MultiReset) ? MultiReset : 0
+ClockCheck := IsSet(ClockCheck) ? ClockCheck : 1
+LastBlenderRot := IsSet(LastBlenderRot) ? LastBlenderRot : 1
+BlenderIndex1 := IsSet(BlenderIndex1) ? BlenderIndex1 : 1
+BlenderIndex2 := IsSet(BlenderIndex2) ? BlenderIndex2 : 1
+BlenderIndex3 := IsSet(BlenderIndex3) ? BlenderIndex3 : 1
+BlenderItem1 := IsSet(BlenderItem1) ? BlenderItem1 : "None"
+BlenderItem2 := IsSet(BlenderItem2) ? BlenderItem2 : "None"
+BlenderItem3 := IsSet(BlenderItem3) ? BlenderItem3 : "None"
+Test1Path := IsSet(Test1Path) ? Test1Path : ""
+Test2Path := IsSet(Test2Path) ? Test2Path : ""
+; Max cycle and config/status variable initializations to prevent 'variable not assigned' errors
+MSlot1MaxCycle := IsSet(MSlot1MaxCycle) ? MSlot1MaxCycle : 1
+MSlot2MaxCycle := IsSet(MSlot2MaxCycle) ? MSlot2MaxCycle : 1
+MSlot3MaxCycle := IsSet(MSlot3MaxCycle) ? MSlot3MaxCycle : 1
+discordMode := IsSet(discordMode) ? discordMode : 0
+discordCheck := IsSet(discordCheck) ? discordCheck : 0
+webhook := IsSet(webhook) ? webhook : ""
+bottoken := IsSet(bottoken) ? bottoken : ""
+MainChannelCheck := IsSet(MainChannelCheck) ? MainChannelCheck : 0
+MainChannelID := IsSet(MainChannelID) ? MainChannelID : ""
+ReportChannelCheck := IsSet(ReportChannelCheck) ? ReportChannelCheck : 0
+ReportChannelID := IsSet(ReportChannelID) ? ReportChannelID : ""
+WebhookEasterEgg := IsSet(WebhookEasterEgg) ? WebhookEasterEgg : 0
+ssCheck := IsSet(ssCheck) ? ssCheck : 0
+ssDebugging := IsSet(ssDebugging) ? ssDebugging : 0
+CriticalSSCheck := IsSet(CriticalSSCheck) ? CriticalSSCheck : 1
+AmuletSSCheck := IsSet(AmuletSSCheck) ? AmuletSSCheck : 1
+MachineSSCheck := IsSet(MachineSSCheck) ? MachineSSCheck : 1
+BalloonSSCheck := IsSet(BalloonSSCheck) ? BalloonSSCheck : 1
+ViciousSSCheck := IsSet(ViciousSSCheck) ? ViciousSSCheck : 1
+DeathSSCheck := IsSet(DeathSSCheck) ? DeathSSCheck : 1
+PlanterSSCheck := IsSet(PlanterSSCheck) ? PlanterSSCheck : 1
+HoneySSCheck := IsSet(HoneySSCheck) ? HoneySSCheck : 0
+criticalCheck := IsSet(criticalCheck) ? criticalCheck : 0
+discordUID := IsSet(discordUID) ? discordUID : ""
+CriticalErrorPingCheck := IsSet(CriticalErrorPingCheck) ? CriticalErrorPingCheck : 1
+DisconnectPingCheck := IsSet(DisconnectPingCheck) ? DisconnectPingCheck : 1
+GameFrozenPingCheck := IsSet(GameFrozenPingCheck) ? GameFrozenPingCheck : 1
+PhantomPingCheck := IsSet(PhantomPingCheck) ? PhantomPingCheck : 1
+UnexpectedDeathPingCheck := IsSet(UnexpectedDeathPingCheck) ? UnexpectedDeathPingCheck : 0
+EmergencyBalloonPingCheck := IsSet(EmergencyBalloonPingCheck) ? EmergencyBalloonPingCheck : 0
+commandPrefix := IsSet(commandPrefix) ? commandPrefix : "?"
+NightAnnouncementCheck := IsSet(NightAnnouncementCheck) ? NightAnnouncementCheck : 0
+NightAnnouncementName := IsSet(NightAnnouncementName) ? NightAnnouncementName : ""
+NightAnnouncementPingID := IsSet(NightAnnouncementPingID) ? NightAnnouncementPingID : ""
+NightAnnouncementWebhook := IsSet(NightAnnouncementWebhook) ? NightAnnouncementWebhook : ""
+PrivServer := IsSet(PrivServer) ? PrivServer : ""
+FallbackServer1 := IsSet(FallbackServer1) ? FallbackServer1 : ""
+FallbackServer2 := IsSet(FallbackServer2) ? FallbackServer2 : ""
+FallbackServer3 := IsSet(FallbackServer3) ? FallbackServer3 : ""
+DebugLogEnabled := IsSet(DebugLogEnabled) ? DebugLogEnabled : 1
+MonsterRespawnTime := IsSet(MonsterRespawnTime) ? MonsterRespawnTime : 0
+HoneyUpdateSSCheck := IsSet(HoneyUpdateSSCheck) ? HoneyUpdateSSCheck : 1
+; Planter/Field cycle slot 3 glitter and autofull variable initializations to prevent 'variable not assigned' errors
+MSlot3Cycle1Glitter := IsSet(MSlot3Cycle1Glitter) ? MSlot3Cycle1Glitter : 0
+MSlot3Cycle2Glitter := IsSet(MSlot3Cycle2Glitter) ? MSlot3Cycle2Glitter : 0
+MSlot3Cycle3Glitter := IsSet(MSlot3Cycle3Glitter) ? MSlot3Cycle3Glitter : 0
+MSlot3Cycle4Glitter := IsSet(MSlot3Cycle4Glitter) ? MSlot3Cycle4Glitter : 0
+MSlot3Cycle5Glitter := IsSet(MSlot3Cycle5Glitter) ? MSlot3Cycle5Glitter : 0
+MSlot3Cycle6Glitter := IsSet(MSlot3Cycle6Glitter) ? MSlot3Cycle6Glitter : 0
+MSlot3Cycle7Glitter := IsSet(MSlot3Cycle7Glitter) ? MSlot3Cycle7Glitter : 0
+MSlot3Cycle8Glitter := IsSet(MSlot3Cycle8Glitter) ? MSlot3Cycle8Glitter : 0
+MSlot3Cycle9Glitter := IsSet(MSlot3Cycle9Glitter) ? MSlot3Cycle9Glitter : 0
+MSlot3Cycle1AutoFull := IsSet(MSlot3Cycle1AutoFull) ? MSlot3Cycle1AutoFull : 0
+MSlot3Cycle2AutoFull := IsSet(MSlot3Cycle2AutoFull) ? MSlot3Cycle2AutoFull : 0
+MSlot3Cycle3AutoFull := IsSet(MSlot3Cycle3AutoFull) ? MSlot3Cycle3AutoFull : 0
+MSlot3Cycle4AutoFull := IsSet(MSlot3Cycle4AutoFull) ? MSlot3Cycle4AutoFull : 0
+MSlot3Cycle5AutoFull := IsSet(MSlot3Cycle5AutoFull) ? MSlot3Cycle5AutoFull : 0
+MSlot3Cycle6AutoFull := IsSet(MSlot3Cycle6AutoFull) ? MSlot3Cycle6AutoFull : 0
+MSlot3Cycle7AutoFull := IsSet(MSlot3Cycle7AutoFull) ? MSlot3Cycle7AutoFull : 0
+MSlot3Cycle8AutoFull := IsSet(MSlot3Cycle8AutoFull) ? MSlot3Cycle8AutoFull : 0
+MSlot3Cycle9AutoFull := IsSet(MSlot3Cycle9AutoFull) ? MSlot3Cycle9AutoFull : 0
+; Planter/Field cycle slot 3 variable initializations to prevent 'variable not assigned' errors
+MSlot3Cycle1Planter := IsSet(MSlot3Cycle1Planter) ? MSlot3Cycle1Planter : "None"
+MSlot3Cycle2Planter := IsSet(MSlot3Cycle2Planter) ? MSlot3Cycle2Planter : "None"
+MSlot3Cycle3Planter := IsSet(MSlot3Cycle3Planter) ? MSlot3Cycle3Planter : "None"
+MSlot3Cycle4Planter := IsSet(MSlot3Cycle4Planter) ? MSlot3Cycle4Planter : "None"
+MSlot3Cycle5Planter := IsSet(MSlot3Cycle5Planter) ? MSlot3Cycle5Planter : "None"
+MSlot3Cycle6Planter := IsSet(MSlot3Cycle6Planter) ? MSlot3Cycle6Planter : "None"
+MSlot3Cycle7Planter := IsSet(MSlot3Cycle7Planter) ? MSlot3Cycle7Planter : "None"
+MSlot3Cycle8Planter := IsSet(MSlot3Cycle8Planter) ? MSlot3Cycle8Planter : "None"
+MSlot3Cycle9Planter := IsSet(MSlot3Cycle9Planter) ? MSlot3Cycle9Planter : "None"
+MSlot3Cycle1Field := IsSet(MSlot3Cycle1Field) ? MSlot3Cycle1Field : "None"
+MSlot3Cycle2Field := IsSet(MSlot3Cycle2Field) ? MSlot3Cycle2Field : "None"
+MSlot3Cycle3Field := IsSet(MSlot3Cycle3Field) ? MSlot3Cycle3Field : "None"
+MSlot3Cycle4Field := IsSet(MSlot3Cycle4Field) ? MSlot3Cycle4Field : "None"
+MSlot3Cycle5Field := IsSet(MSlot3Cycle5Field) ? MSlot3Cycle5Field : "None"
+MSlot3Cycle6Field := IsSet(MSlot3Cycle6Field) ? MSlot3Cycle6Field : "None"
+MSlot3Cycle7Field := IsSet(MSlot3Cycle7Field) ? MSlot3Cycle7Field : "None"
+MSlot3Cycle8Field := IsSet(MSlot3Cycle8Field) ? MSlot3Cycle8Field : "None"
+MSlot3Cycle9Field := IsSet(MSlot3Cycle9Field) ? MSlot3Cycle9Field : "None"
+; Planter/Field cycle slot 2 glitter and autofull variable initializations to prevent 'variable not assigned' errors
+MSlot2Cycle1Glitter := IsSet(MSlot2Cycle1Glitter) ? MSlot2Cycle1Glitter : 0
+MSlot2Cycle2Glitter := IsSet(MSlot2Cycle2Glitter) ? MSlot2Cycle2Glitter : 0
+MSlot2Cycle3Glitter := IsSet(MSlot2Cycle3Glitter) ? MSlot2Cycle3Glitter : 0
+MSlot2Cycle4Glitter := IsSet(MSlot2Cycle4Glitter) ? MSlot2Cycle4Glitter : 0
+MSlot2Cycle5Glitter := IsSet(MSlot2Cycle5Glitter) ? MSlot2Cycle5Glitter : 0
+MSlot2Cycle6Glitter := IsSet(MSlot2Cycle6Glitter) ? MSlot2Cycle6Glitter : 0
+MSlot2Cycle7Glitter := IsSet(MSlot2Cycle7Glitter) ? MSlot2Cycle7Glitter : 0
+MSlot2Cycle8Glitter := IsSet(MSlot2Cycle8Glitter) ? MSlot2Cycle8Glitter : 0
+MSlot2Cycle9Glitter := IsSet(MSlot2Cycle9Glitter) ? MSlot2Cycle9Glitter : 0
+MSlot2Cycle1AutoFull := IsSet(MSlot2Cycle1AutoFull) ? MSlot2Cycle1AutoFull : 0
+MSlot2Cycle2AutoFull := IsSet(MSlot2Cycle2AutoFull) ? MSlot2Cycle2AutoFull : 0
+MSlot2Cycle3AutoFull := IsSet(MSlot2Cycle3AutoFull) ? MSlot2Cycle3AutoFull : 0
+MSlot2Cycle4AutoFull := IsSet(MSlot2Cycle4AutoFull) ? MSlot2Cycle4AutoFull : 0
+MSlot2Cycle5AutoFull := IsSet(MSlot2Cycle5AutoFull) ? MSlot2Cycle5AutoFull : 0
+MSlot2Cycle6AutoFull := IsSet(MSlot2Cycle6AutoFull) ? MSlot2Cycle6AutoFull : 0
+MSlot2Cycle7AutoFull := IsSet(MSlot2Cycle7AutoFull) ? MSlot2Cycle7AutoFull : 0
+MSlot2Cycle8AutoFull := IsSet(MSlot2Cycle8AutoFull) ? MSlot2Cycle8AutoFull : 0
+MSlot2Cycle9AutoFull := IsSet(MSlot2Cycle9AutoFull) ? MSlot2Cycle9AutoFull : 0
+; Planter/Field cycle slot 2 variable initializations to prevent 'variable not assigned' errors
+MSlot2Cycle1Planter := IsSet(MSlot2Cycle1Planter) ? MSlot2Cycle1Planter : "None"
+MSlot2Cycle2Planter := IsSet(MSlot2Cycle2Planter) ? MSlot2Cycle2Planter : "None"
+MSlot2Cycle3Planter := IsSet(MSlot2Cycle3Planter) ? MSlot2Cycle3Planter : "None"
+MSlot2Cycle4Planter := IsSet(MSlot2Cycle4Planter) ? MSlot2Cycle4Planter : "None"
+MSlot2Cycle5Planter := IsSet(MSlot2Cycle5Planter) ? MSlot2Cycle5Planter : "None"
+MSlot2Cycle6Planter := IsSet(MSlot2Cycle6Planter) ? MSlot2Cycle6Planter : "None"
+MSlot2Cycle7Planter := IsSet(MSlot2Cycle7Planter) ? MSlot2Cycle7Planter : "None"
+MSlot2Cycle8Planter := IsSet(MSlot2Cycle8Planter) ? MSlot2Cycle8Planter : "None"
+MSlot2Cycle9Planter := IsSet(MSlot2Cycle9Planter) ? MSlot2Cycle9Planter : "None"
+MSlot2Cycle1Field := IsSet(MSlot2Cycle1Field) ? MSlot2Cycle1Field : "None"
+MSlot2Cycle2Field := IsSet(MSlot2Cycle2Field) ? MSlot2Cycle2Field : "None"
+MSlot2Cycle3Field := IsSet(MSlot2Cycle3Field) ? MSlot2Cycle3Field : "None"
+MSlot2Cycle4Field := IsSet(MSlot2Cycle4Field) ? MSlot2Cycle4Field : "None"
+MSlot2Cycle5Field := IsSet(MSlot2Cycle5Field) ? MSlot2Cycle5Field : "None"
+MSlot2Cycle6Field := IsSet(MSlot2Cycle6Field) ? MSlot2Cycle6Field : "None"
+MSlot2Cycle7Field := IsSet(MSlot2Cycle7Field) ? MSlot2Cycle7Field : "None"
+MSlot2Cycle8Field := IsSet(MSlot2Cycle8Field) ? MSlot2Cycle8Field : "None"
+MSlot2Cycle9Field := IsSet(MSlot2Cycle9Field) ? MSlot2Cycle9Field : "None"
+; Planter/Field cycle glitter and autofull variable initializations to prevent 'variable not assigned' errors
+MSlot1Cycle1Glitter := IsSet(MSlot1Cycle1Glitter) ? MSlot1Cycle1Glitter : 0
+MSlot1Cycle2Glitter := IsSet(MSlot1Cycle2Glitter) ? MSlot1Cycle2Glitter : 0
+MSlot1Cycle3Glitter := IsSet(MSlot1Cycle3Glitter) ? MSlot1Cycle3Glitter : 0
+MSlot1Cycle4Glitter := IsSet(MSlot1Cycle4Glitter) ? MSlot1Cycle4Glitter : 0
+MSlot1Cycle5Glitter := IsSet(MSlot1Cycle5Glitter) ? MSlot1Cycle5Glitter : 0
+MSlot1Cycle6Glitter := IsSet(MSlot1Cycle6Glitter) ? MSlot1Cycle6Glitter : 0
+MSlot1Cycle7Glitter := IsSet(MSlot1Cycle7Glitter) ? MSlot1Cycle7Glitter : 0
+MSlot1Cycle8Glitter := IsSet(MSlot1Cycle8Glitter) ? MSlot1Cycle8Glitter : 0
+MSlot1Cycle9Glitter := IsSet(MSlot1Cycle9Glitter) ? MSlot1Cycle9Glitter : 0
+MSlot1Cycle1AutoFull := IsSet(MSlot1Cycle1AutoFull) ? MSlot1Cycle1AutoFull : 0
+MSlot1Cycle2AutoFull := IsSet(MSlot1Cycle2AutoFull) ? MSlot1Cycle2AutoFull : 0
+MSlot1Cycle3AutoFull := IsSet(MSlot1Cycle3AutoFull) ? MSlot1Cycle3AutoFull : 0
+MSlot1Cycle4AutoFull := IsSet(MSlot1Cycle4AutoFull) ? MSlot1Cycle4AutoFull : 0
+MSlot1Cycle5AutoFull := IsSet(MSlot1Cycle5AutoFull) ? MSlot1Cycle5AutoFull : 0
+MSlot1Cycle6AutoFull := IsSet(MSlot1Cycle6AutoFull) ? MSlot1Cycle6AutoFull : 0
+MSlot1Cycle7AutoFull := IsSet(MSlot1Cycle7AutoFull) ? MSlot1Cycle7AutoFull : 0
+MSlot1Cycle8AutoFull := IsSet(MSlot1Cycle8AutoFull) ? MSlot1Cycle8AutoFull : 0
+MSlot1Cycle9AutoFull := IsSet(MSlot1Cycle9AutoFull) ? MSlot1Cycle9AutoFull : 0
+; Timer and Planter/Field cycle variable initializations to prevent 'variable not assigned' errors
+TimerGuiTransparency := IsSet(TimerGuiTransparency) ? TimerGuiTransparency : 0
+TimerX := IsSet(TimerX) ? TimerX : 150
+TimerY := IsSet(TimerY) ? TimerY : 150
+MSlot1Cycle1Planter := IsSet(MSlot1Cycle1Planter) ? MSlot1Cycle1Planter : "None"
+MSlot1Cycle2Planter := IsSet(MSlot1Cycle2Planter) ? MSlot1Cycle2Planter : "None"
+MSlot1Cycle3Planter := IsSet(MSlot1Cycle3Planter) ? MSlot1Cycle3Planter : "None"
+MSlot1Cycle4Planter := IsSet(MSlot1Cycle4Planter) ? MSlot1Cycle4Planter : "None"
+MSlot1Cycle5Planter := IsSet(MSlot1Cycle5Planter) ? MSlot1Cycle5Planter : "None"
+MSlot1Cycle6Planter := IsSet(MSlot1Cycle6Planter) ? MSlot1Cycle6Planter : "None"
+MSlot1Cycle7Planter := IsSet(MSlot1Cycle7Planter) ? MSlot1Cycle7Planter : "None"
+MSlot1Cycle8Planter := IsSet(MSlot1Cycle8Planter) ? MSlot1Cycle8Planter : "None"
+MSlot1Cycle9Planter := IsSet(MSlot1Cycle9Planter) ? MSlot1Cycle9Planter : "None"
+MSlot1Cycle1Field := IsSet(MSlot1Cycle1Field) ? MSlot1Cycle1Field : "None"
+MSlot1Cycle2Field := IsSet(MSlot1Cycle2Field) ? MSlot1Cycle2Field : "None"
+MSlot1Cycle3Field := IsSet(MSlot1Cycle3Field) ? MSlot1Cycle3Field : "None"
+MSlot1Cycle4Field := IsSet(MSlot1Cycle4Field) ? MSlot1Cycle4Field : "None"
+MSlot1Cycle5Field := IsSet(MSlot1Cycle5Field) ? MSlot1Cycle5Field : "None"
+MSlot1Cycle6Field := IsSet(MSlot1Cycle6Field) ? MSlot1Cycle6Field : "None"
+MSlot1Cycle7Field := IsSet(MSlot1Cycle7Field) ? MSlot1Cycle7Field : "None"
+MSlot1Cycle8Field := IsSet(MSlot1Cycle8Field) ? MSlot1Cycle8Field : "None"
+MSlot1Cycle9Field := IsSet(MSlot1Cycle9Field) ? MSlot1Cycle9Field : "None"
+; Additional variable initializations to prevent 'variable not assigned' errors (GUI/Boost tab)
+hHB2 := IsSet(hHB2) ? hHB2 : 0
+hHB3 := IsSet(hHB3) ? hHB3 : 0
+hHB4 := IsSet(hHB4) ? hHB4 : 0
+hHB5 := IsSet(hHB5) ? hHB5 : 0
+hHB6 := IsSet(hHB6) ? hHB6 : 0
+hHB7 := IsSet(hHB7) ? hHB7 : 0
+PFieldBoosted := IsSet(PFieldBoosted) ? PFieldBoosted : 0
+ShrineIndex := IsSet(ShrineIndex) ? ShrineIndex : 1
+AutoFieldBoostRefresh := IsSet(AutoFieldBoostRefresh) ? AutoFieldBoostRefresh : 12.5
+AFBFieldEnable := IsSet(AFBFieldEnable) ? AFBFieldEnable : 0
+AFBDiceHotbar := IsSet(AFBDiceHotbar) ? AFBDiceHotbar : "None"
+AFBGlitterHotbar := IsSet(AFBGlitterHotbar) ? AFBGlitterHotbar : "None"
+AFBDiceLimitEnable := IsSet(AFBDiceLimitEnable) ? AFBDiceLimitEnable : 1
+AFBGlitterLimitEnable := IsSet(AFBGlitterLimitEnable) ? AFBGlitterLimitEnable : 1
+AFBHoursLimitEnable := IsSet(AFBHoursLimitEnable) ? AFBHoursLimitEnable : 0
+AFBDiceLimit := IsSet(AFBDiceLimit) ? AFBDiceLimit : 1
+AFBGlitterLimit := IsSet(AFBGlitterLimit) ? AFBGlitterLimit : 1
+AFBHoursLimit := IsSet(AFBHoursLimit) ? AFBHoursLimit : 0.01
+; Hotbar variable initializations to prevent 'variable not assigned' errors
+HotbarWhile2 := IsSet(HotbarWhile2) ? HotbarWhile2 : "Never"
+HotbarWhile3 := IsSet(HotbarWhile3) ? HotbarWhile3 : "Never"
+HotbarWhile4 := IsSet(HotbarWhile4) ? HotbarWhile4 : "Never"
+HotbarWhile5 := IsSet(HotbarWhile5) ? HotbarWhile5 : "Never"
+HotbarWhile6 := IsSet(HotbarWhile6) ? HotbarWhile6 : "Never"
+HotbarWhile7 := IsSet(HotbarWhile7) ? HotbarWhile7 : "Never"
+HotbarTime2 := IsSet(HotbarTime2) ? HotbarTime2 : 900
+HotbarTime3 := IsSet(HotbarTime3) ? HotbarTime3 : 900
+HotbarTime4 := IsSet(HotbarTime4) ? HotbarTime4 : 900
+HotbarTime5 := IsSet(HotbarTime5) ? HotbarTime5 : 900
+HotbarTime6 := IsSet(HotbarTime6) ? HotbarTime6 : 900
+HotbarTime7 := IsSet(HotbarTime7) ? HotbarTime7 : 900
+HotbarMax2 := IsSet(HotbarMax2) ? HotbarMax2 : 0
+HotbarMax3 := IsSet(HotbarMax3) ? HotbarMax3 : 0
+HotbarMax4 := IsSet(HotbarMax4) ? HotbarMax4 : 0
+HotbarMax5 := IsSet(HotbarMax5) ? HotbarMax5 : 0
+HotbarMax6 := IsSet(HotbarMax6) ? HotbarMax6 : 0
+HotbarMax7 := IsSet(HotbarMax7) ? HotbarMax7 : 0
+; Final batch of *MatchIgnore variable initializations
+FieldDiceMatchIgnore := IsSet(FieldDiceMatchIgnore) ? FieldDiceMatchIgnore : 0
+MoonCharmMatchIgnore := IsSet(MoonCharmMatchIgnore) ? MoonCharmMatchIgnore : 0
+BlueberryMatchIgnore := IsSet(BlueberryMatchIgnore) ? BlueberryMatchIgnore : 0
+GlitterMatchIgnore := IsSet(GlitterMatchIgnore) ? GlitterMatchIgnore : 0
+StingerMatchIgnore := IsSet(StingerMatchIgnore) ? StingerMatchIgnore : 0
+TreatMatchIgnore := IsSet(TreatMatchIgnore) ? TreatMatchIgnore : 0
+GlueMatchIgnore := IsSet(GlueMatchIgnore) ? GlueMatchIgnore : 0
+CloudVialMatchIgnore := IsSet(CloudVialMatchIgnore) ? CloudVialMatchIgnore : 0
+SoftWaxMatchIgnore := IsSet(SoftWaxMatchIgnore) ? SoftWaxMatchIgnore : 0
+HardWaxMatchIgnore := IsSet(HardWaxMatchIgnore) ? HardWaxMatchIgnore : 0
+SwirledWaxMatchIgnore := IsSet(SwirledWaxMatchIgnore) ? SwirledWaxMatchIgnore : 0
+NightBellMatchIgnore := IsSet(NightBellMatchIgnore) ? NightBellMatchIgnore : 0
+HoneysuckleMatchIgnore := IsSet(HoneysuckleMatchIgnore) ? HoneysuckleMatchIgnore : 0
+SuperSmoothieMatchIgnore := IsSet(SuperSmoothieMatchIgnore) ? SuperSmoothieMatchIgnore : 0
+SmoothDiceMatchIgnore := IsSet(SmoothDiceMatchIgnore) ? SmoothDiceMatchIgnore : 0
+NeonberryMatchIgnore := IsSet(NeonberryMatchIgnore) ? NeonberryMatchIgnore : 0
+GingerbreadMatchIgnore := IsSet(GingerbreadMatchIgnore) ? GingerbreadMatchIgnore : 0
+SilverEggMatchIgnore := IsSet(SilverEggMatchIgnore) ? SilverEggMatchIgnore : 0
+GoldEggMatchIgnore := IsSet(GoldEggMatchIgnore) ? GoldEggMatchIgnore : 0
+DiamondEggMatchIgnore := IsSet(DiamondEggMatchIgnore) ? DiamondEggMatchIgnore : 0
+; Additional variable initializations to prevent 'variable not assigned' errors
+FieldDriftCheck1 := IsSet(FieldDriftCheck1) ? FieldDriftCheck1 : 0
+FieldDriftCheck2 := IsSet(FieldDriftCheck2) ? FieldDriftCheck2 : 0
+FieldDriftCheck3 := IsSet(FieldDriftCheck3) ? FieldDriftCheck3 : 0
+BlenderIndex := IsSet(BlenderIndex) ? BlenderIndex : 1
+MicroConverterMatchIgnore := IsSet(MicroConverterMatchIgnore) ? MicroConverterMatchIgnore : 0
+SunflowerSeedMatchIgnore := IsSet(SunflowerSeedMatchIgnore) ? SunflowerSeedMatchIgnore : 0
+JellyBeanMatchIgnore := IsSet(JellyBeanMatchIgnore) ? JellyBeanMatchIgnore : 0
+RoyalJellyMatchIgnore := IsSet(RoyalJellyMatchIgnore) ? RoyalJellyMatchIgnore : 0
+TicketMatchIgnore := IsSet(TicketMatchIgnore) ? TicketMatchIgnore : 0
+CyanTrimMatchIgnore := IsSet(CyanTrimMatchIgnore) ? CyanTrimMatchIgnore : 0
+OilMatchIgnore := IsSet(OilMatchIgnore) ? OilMatchIgnore : 0
+StrawberryMatchIgnore := IsSet(StrawberryMatchIgnore) ? StrawberryMatchIgnore : 0
+CoconutMatchIgnore := IsSet(CoconutMatchIgnore) ? CoconutMatchIgnore : 0
+TropicalDrinkMatchIgnore := IsSet(TropicalDrinkMatchIgnore) ? TropicalDrinkMatchIgnore : 0
+RedExtractMatchIgnore := IsSet(RedExtractMatchIgnore) ? RedExtractMatchIgnore : 0
+MagicBeanMatchIgnore := IsSet(MagicBeanMatchIgnore) ? MagicBeanMatchIgnore : 0
+PineappleMatchIgnore := IsSet(PineappleMatchIgnore) ? PineappleMatchIgnore : 0
+StarJellyMatchIgnore := IsSet(StarJellyMatchIgnore) ? StarJellyMatchIgnore : 0
+EnzymeMatchIgnore := IsSet(EnzymeMatchIgnore) ? EnzymeMatchIgnore : 0
+BlueExtractMatchIgnore := IsSet(BlueExtractMatchIgnore) ? BlueExtractMatchIgnore : 0
+GumdropMatchIgnore := IsSet(GumdropMatchIgnore) ? GumdropMatchIgnore : 0
+
+FieldPattern1 := IsSet(FieldPattern1) ? FieldPattern1 : ""
+FieldPattern2 := IsSet(FieldPattern2) ? FieldPattern2 : ""
+FieldPattern3 := IsSet(FieldPattern3) ? FieldPattern3 : ""
+FieldPatternSize1 := IsSet(FieldPatternSize1) ? FieldPatternSize1 : ""
+FieldPatternSize2 := IsSet(FieldPatternSize2) ? FieldPatternSize2 : ""
+FieldPatternSize3 := IsSet(FieldPatternSize3) ? FieldPatternSize3 : ""
+FieldPatternReps1 := IsSet(FieldPatternReps1) ? FieldPatternReps1 : 1
+FieldPatternReps2 := IsSet(FieldPatternReps2) ? FieldPatternReps2 : 1
+FieldPatternReps3 := IsSet(FieldPatternReps3) ? FieldPatternReps3 : 1
+FieldPatternShift1 := IsSet(FieldPatternShift1) ? FieldPatternShift1 : 0
+FieldPatternShift2 := IsSet(FieldPatternShift2) ? FieldPatternShift2 : 0
+FieldPatternShift3 := IsSet(FieldPatternShift3) ? FieldPatternShift3 : 0
+FieldPatternInvertFB1 := IsSet(FieldPatternInvertFB1) ? FieldPatternInvertFB1 : 0
+FieldPatternInvertFB2 := IsSet(FieldPatternInvertFB2) ? FieldPatternInvertFB2 : 0
+FieldPatternInvertFB3 := IsSet(FieldPatternInvertFB3) ? FieldPatternInvertFB3 : 0
+FieldPatternInvertLR1 := IsSet(FieldPatternInvertLR1) ? FieldPatternInvertLR1 : 0
+FieldPatternInvertLR2 := IsSet(FieldPatternInvertLR2) ? FieldPatternInvertLR2 : 0
+FieldPatternInvertLR3 := IsSet(FieldPatternInvertLR3) ? FieldPatternInvertLR3 : 0
+
+; Ensure all other gather tab variables are initialized before GUI code uses them
+FieldUntilPack1 := IsSet(FieldUntilPack1) ? FieldUntilPack1 : 0
+FieldUntilPack2 := IsSet(FieldUntilPack2) ? FieldUntilPack2 : 0
+FieldUntilPack3 := IsSet(FieldUntilPack3) ? FieldUntilPack3 : 0
+FieldReturnType1 := IsSet(FieldReturnType1) ? FieldReturnType1 : ""
+FieldReturnType2 := IsSet(FieldReturnType2) ? FieldReturnType2 : ""
+FieldReturnType3 := IsSet(FieldReturnType3) ? FieldReturnType3 : ""
+FieldSprinklerLoc1 := IsSet(FieldSprinklerLoc1) ? FieldSprinklerLoc1 : ""
+FieldSprinklerLoc2 := IsSet(FieldSprinklerLoc2) ? FieldSprinklerLoc2 : ""
+FieldSprinklerLoc3 := IsSet(FieldSprinklerLoc3) ? FieldSprinklerLoc3 : ""
+FieldSprinklerDist1 := IsSet(FieldSprinklerDist1) ? FieldSprinklerDist1 : 0
+FieldSprinklerDist2 := IsSet(FieldSprinklerDist2) ? FieldSprinklerDist2 : 0
+FieldSprinklerDist3 := IsSet(FieldSprinklerDist3) ? FieldSprinklerDist3 : 0
+FieldRotateDirection1 := IsSet(FieldRotateDirection1) ? FieldRotateDirection1 : ""
+FieldRotateDirection2 := IsSet(FieldRotateDirection2) ? FieldRotateDirection2 : ""
+FieldRotateDirection3 := IsSet(FieldRotateDirection3) ? FieldRotateDirection3 : ""
+FieldRotateTimes1 := IsSet(FieldRotateTimes1) ? FieldRotateTimes1 : 1
+FieldRotateTimes2 := IsSet(FieldRotateTimes2) ? FieldRotateTimes2 : 1
+FieldRotateTimes3 := IsSet(FieldRotateTimes3) ? FieldRotateTimes3 : 1
 
 ;Compiler directives (currently not in use):
 ;@Ahk2Exe-SetName Natro Macro
@@ -18,10 +515,10 @@ You should have received a copy of the license along with Natro Macro. If not, p
 ;@Ahk2Exe-SetCompanyName Natro Team
 ;@Ahk2Exe-SetCopyright Copyright © Natro Team
 ;@Ahk2Exe-SetOrigFilename natro_macro.exe
+
 #MaxThreads 255
 #Requires AutoHotkey v2.0
 #SingleInstance Force
-
 #Include "%A_ScriptDir%\..\lib"
 #Include "Gdip_All.ahk"
 #Include "Gdip_ImageSearch.ahk"
@@ -30,8 +527,12 @@ You should have received a copy of the license along with Natro Macro. If not, p
 #Include "DurationFromSeconds.ahk"
 #Include "nowUnix.ahk"
 
+
+
 #Warn VarUnset, Off
 OnError (e, mode) => (mode = "Return") ? -1 : 0
+
+global IgnoreUpdateVersion := ""
 
 SetWorkingDir A_ScriptDir "\.."
 CoordMode "Mouse", "Screen"
@@ -2097,7 +2598,10 @@ A_TrayMenu.Default := "Start Macro"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; GUI SKINNING
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;https://www.autohotkey.com/boards/viewtopic.php?f=6&t=5841&hilit=gui+skin
+if (!IsSet(GuiTheme) || GuiTheme = "")
+	GuiTheme := "MacLion3"
 DllCall(DllCall("GetProcAddress"
 		, "Ptr",DllCall("LoadLibrary", "Str",A_WorkingDir "\nm_image_assets\Styles\USkin.dll")
 		, "AStr","USkinInit", "Ptr")
@@ -2125,7 +2629,7 @@ nm_AutoUpdateHandler(req)
 			MainGui["ImageDiscordLink"].Move(494 - VersionWidth - 48), MainGui["ImageDiscordLink"].Redraw()
 			try MainGui["SecretButton"].Move(494-VersionWidth-104), MainGui["SecretButton"].Redraw()
 
-			if (LatestVer != IgnoreUpdateVersion)
+			if (LatestVer != (IsSet(IgnoreUpdateVersion) ? IgnoreUpdateVersion : ""))
 				nm_AutoUpdateGUI()
 		}
 	}
@@ -2306,8 +2810,8 @@ MainGui.Add("Button", "x5 y260 w65 h20 -Wrap Disabled vStartButton", " Start (" 
 MainGui.Add("Button", "x75 y260 w65 h20 -Wrap Disabled vPauseButton", " Pause (" PauseHotkey ")").OnEvent("Click", nm_PauseButton)
 MainGui.Add("Button", "x145 y260 w65 h20 -Wrap Disabled vStopButton", " Stop (" StopHotkey ")").OnEvent("Click", nm_StopButton)
 for k,v in ["PMondoGuid","PMondoGuidComplete","PFieldBoosted","PFieldGuidExtend","PFieldGuidExtendMins","PFieldBoostExtend","PPopStarExtend"]
-	%v%:=0
-#include "*i %A_ScriptDir%\..\settings\personal.ahk"
+if (IsSet(v) && Type(v) = "String" && v != "")
+	%v% := 0
 
 ; add tabs
 TabArr := ["Gather","Collect/Kill","Boost","Quests","Planters","Status","Settings","Misc","Credits"], (BuffDetectReset = 1) && TabArr.Push("Advanced")
@@ -2321,6 +2825,7 @@ if (TimersOpen = 1)
 
 ; GATHER TAB
 ; ------------------------
+
 TabCtrl.UseTab("Gather") ; not needed since TabCtrl creation defaults to using first tab, but specified for readability
 MainGui.SetFont("w700 Underline")
 MainGui.Add("Text", "x0 y25 w126 +center +BackgroundTrans", "Gathering")
@@ -2628,8 +3133,15 @@ MainGui.SetFont("s6 w700")
 MainGui.Add("Text", "x295 yp+6 +BackgroundTrans", "UTC")
 MainGui.SetFont("s8 cDefault Norm", "Tahoma")
 MainGui.Add("Button", "x315 yp-3 w10 h15 vReconnectTimeHelp Disabled", "?").OnEvent("Click", nm_ReconnectTimeHelp)
-(GuiCtrl := MainGui.Add("CheckBox", "x176 yp+24 w88 h15 vReconnectMessage Disabled Checked" ReconnectMessage, "Natro so broke")).Section := "Settings", GuiCtrl.OnEvent("Click", nm_saveConfig)
-hBM := Gdip_CreateHBITMAPFromBitmap(bitmaps["weary"])
+GuiCtrl := MainGui.Add("CheckBox", "x176 yp+24 w88 h15 vReconnectMessage Disabled Checked" ReconnectMessage, "Natro so broke")
+GuiCtrl.Section := "Settings"
+GuiCtrl.OnEvent("Click", nm_saveConfig)
+if bitmaps.Has("weary") {
+	hBM := Gdip_CreateHBITMAPFromBitmap(bitmaps["weary"])
+} else {
+	hBM := 0
+	; Optionally log or handle missing bitmap here
+}
 MainGui.Add("Picture", "+BackgroundTrans x269 yp-2 w20 h20", "HBITMAP:*" hBM)
 DllCall("DeleteObject", "ptr", hBM)
 Gdip_DisposeImage(bitmaps["weary"])
@@ -4876,6 +5388,9 @@ nm_BeesmasHandler(req)
 {
 	global
 	local hBM, k, v
+
+	k := 0
+	v := 0
 
 	if (req.readyState != 4)
 		return
@@ -8001,6 +8516,10 @@ nm_GenerateBeeList(*)
 	; obtain lower bound of search
 	pBMScreen := Gdip_BitmapFromScreen(windowX "|" windowY+offsetY+150 "|306|" windowHeight-offsetY-150)
 	local pBMWhite, pBMRed, pBMBlue
+
+	pBMWhite := 0
+	pBMRed := 0
+	pBMBlue := 0
 	lb := 450
 	for k,v in Map("white",0xffc4c8cb, "red",0xffc7403c, "blue",0xff4d87ca)
 	{
@@ -8234,6 +8753,13 @@ nm_ResetHotkeys(*){
 nm_saveHotkey(GuiCtrl, *){
 	global
 	local k, v, l, NewHotkey, StartHotkeyEdit, PauseHotkeyEdit, StopHotkeyEdit, TimersHotkeyEdit, AutoClickerHotkeyEdit
+	l := 0
+	NewHotkey := ""
+	StartHotkeyEdit := ""
+	PauseHotkeyEdit := ""
+	StopHotkeyEdit := ""
+	TimersHotkeyEdit := ""
+	AutoClickerHotkeyEdit := ""
 	k := GuiCtrl.Name, %k% := GuiCtrl.Value
 
 	v := StrReplace(k, "Edit")
@@ -9198,6 +9724,25 @@ nm_ContributorsHandler(req)
 }
 nm_ContributorsImage(page:=1, contributors:=""){
 	static hBM1, hBM2, hBM3, hBM4, hBM5, hBM6, hBM7, hBM8, hBM9, hBM10
+	hBM2 := 0
+	hBM3 := 0
+	hBM4 := 0
+	hBM5 := 0
+	hBM6 := 0
+	hBM7 := 0
+	hBM8 := 0
+	hBM9 := 0
+	hBM10 := 0
+	hBM11 := 0
+	hBM12 := 0
+	hBM13 := 0
+	hBM14 := 0
+	hBM15 := 0
+	hBM16 := 0
+	hBM17 := 0
+	hBM18 := 0
+	hBM19 := 0
+	hBM20 := 0
 		, hBM11, hBM12, hBM13, hBM14, hBM15, hBM16, hBM17, hBM18, hBM19, hBM20 ; 20 pages max
 		, colorArr := Map("blue", [0xff83c6e2, 0xff2779d8, 0xff83c6e2]
 			, "gold", [0xfff0ca8f, 0xffd48d22, 0xfff0ca8f]
@@ -9205,6 +9750,27 @@ nm_ContributorsImage(page:=1, contributors:=""){
 			, "interrobang", [0xff9992FE, 0xff5246FD, 0xff9992FE])
 	local pBM1, pBM2, pBM3, pBM4, pBM5, pBM6, pBM7, pBM8, pBM9, pBM10
 	, pBM11, pBM12, pBM13, pBM14, pBM15, pBM16, pBM17, pBM18, pBM19, pBM20 ; 20 pages max
+
+	pBM1 := 0
+	pBM2 := 0
+	pBM3 := 0
+	pBM4 := 0
+	pBM5 := 0
+	pBM6 := 0
+	pBM7 := 0
+	pBM8 := 0
+	pBM9 := 0
+	pBM10 := 0
+	pBM11 := 0
+	pBM12 := 0
+	pBM13 := 0
+	pBM14 := 0
+	pBM15 := 0
+	pBM16 := 0
+	pBM17 := 0
+	pBM18 := 0
+	pBM19 := 0
+	pBM20 := 0
 
 	if !IsSet(hBM1)
 	{
@@ -12081,7 +12647,7 @@ nm_SolveMemoryMatch(MemoryMatchGame:="") {
 				StoreItemOAC[Tile] := Gdip_BitmapFromScreen(TileXCordOAC-25 "|" TileYCordOAC-25 "|50|50") ; Detect Clicked Item
 				;nm_CreateFolder(path := A_WorkingDir "\MMScreenshots"), Gdip_SaveBitmapToFile(StoreItemOAC[Tile], path "\image" Tile ".png") ; comment out this line for public release
 				for item, data in MemoryMatch {
-  					if ((MemoryMatchGame && (%item%MatchIgnore & MemoryMatchGames[MemoryMatchGame].bit)) || (!MemoryMatchGame && (%item%MatchIgnore = data.games))) {
+					if ((MemoryMatchGame && (%item%MatchIgnore & MemoryMatchGames[MemoryMatchGame].bit)) || (!MemoryMatchGame && (%item%MatchIgnore = data.games))) {
 						loop 2 {
 							bitmap:="MM" . item . A_index
 							if (Gdip_ImageSearch(StoreItemOAC[Tile], bitmaps[bitmap], , , , , , 10, , 2) = 1 && LastChance!=1) {
@@ -16756,8 +17322,19 @@ nm_LocateSprinkler(&X:="", &Y:=""){ ; find client coordinates of approximately c
 	hWidth := NumGet(hBitmapData, 0, "UInt"), hHeight := NumGet(hBitmapData, 4, "UInt")
 
 	local n1width, n1height, n1Stride, n1Scan, n1BitmapData
+	n1width := 0
+	n1height := 0
+	n1Stride := 0
+	n1Scan := 0
+	n1BitmapData := 0
 		, n1width, n1height, n2Stride, n2Scan, n2BitmapData
+	n2Stride := 0
+	n2Scan := 0
+	n2BitmapData := 0
 		, n1width, n1height, n3Stride, n3Scan, n3BitmapData
+	n3Stride := 0
+	n3Scan := 0
+	n3BitmapData := 0
 	for i,k in sprinklerImages
 	{
 		Gdip_GetImageDimensions(bitmaps[k], &n%i%Width, &n%i%Height)
@@ -21160,6 +21737,8 @@ ba_SavePlacedPlanter(fieldName, planter, planterNum, nectar){
 mp_Planter() { ;//todo: merge these manual planter functions as much as possible with Planters+ functions, lots of code duplication here!
 	Global
 	Local TimeElapsed, GlitterPos, field, i, k, v
+	TimeElapsed := 0
+	GlitterPos := 0
 	Global PlanterGlitter1, PlanterGlitter2, PlanterGlitter3, PlanterGlitterC1, PlanterGlitterC2, PlanterGlitterC3, PlanterHarvestFull1, PlanterHarvestFull2, PlanterHarvestFull3, PlanterSS1, PlanterSS2, PlanterSS3
 
 	If (PlanterMode != 1)
@@ -22187,6 +22766,7 @@ nm_backgroundEvent(wParam, lParam, *){
 	global youDied, NightLastDetected, VBState, BackpackPercent, BackpackPercentFiltered, FieldGuidDetected, HasPopStar, PopStarActive
 	static arr:=["youDied", "NightLastDetected", "VBState", "BackpackPercent", "BackpackPercentFiltered", "FieldGuidDetected", "HasPopStar", "PopStarActive"]
 
+	arr := ["youDied", "NightLastDetected", "VBState", "BackpackPercent", "BackpackPercentFiltered", "FieldGuidDetected", "HasPopStar", "PopStarActive"]
 	var := arr[wParam], %var% := lParam
 	return 0
 }
@@ -22195,9 +22775,10 @@ nm_setGlobalStr(wParam, lParam, *)
 	global
 	Critical
 	; enumeration
-	#Include "%A_ScriptDir%\..\lib\enum\EnumStr.ahk"
+; --- ENUM INCLUDES MOVED TO TOP FOR SCOPE SAFETY ---
 	static sections := ["Boost","Collect","Gather","Planters","Quests","Settings","Status","Blender","Shrine"]
 
+	arr := ["youDied", "NightLastDetected", "VBState", "BackpackPercent", "BackpackPercentFiltered", "FieldGuidDetected", "HasPopStar", "PopStarActive"]
 	local var := arr[wParam], section := sections[lParam]
 	try %var% := IniRead("settings\nm_config.ini", section, var)
 	nm_UpdateGUIVar(var)
@@ -22208,7 +22789,7 @@ nm_setGlobalInt(wParam, lParam, *)
 	global
 	Critical
 	; enumeration
-	#Include "%A_ScriptDir%\..\lib\enum\EnumInt.ahk"
+; --- ENUM INCLUDES MOVED TO TOP FOR SCOPE SAFETY ---
 
 	local var := arr[wParam]
 	try %var% := lParam
@@ -22301,6 +22882,9 @@ nm_UpdateGUIVar(var)
 			case "BlenderIndex1", "BlenderIndex2", "BlenderIndex3":
 			Num := SubStr(k, -1)
 			local BlenderData1, BlenderData2, BlenderData3
+	BlenderData1 := 0
+	BlenderData2 := 0
+	BlenderData3 := 0
 			BlenderData%Num% := MainGui["BlenderData" Num].Text
 			MainGui["BlenderData" Num].Text := StrReplace(BlenderData%Num%, SubStr(BlenderData%Num%, InStr(BlenderData%Num%, " ") + 1), "[" ((%k% = "Infinite") ? "∞" : %k%) "]")
 
@@ -22318,6 +22902,9 @@ nm_UpdateGUIVar(var)
 			case "ShrineIndex1", "ShrineIndex2":
 			Num := SubStr(k, -1)
 			local ShrineData1, ShrineData2, ShrineData3
+	ShrineData1 := 0
+	ShrineData2 := 0
+	ShrineData3 := 0
 			ShrineData%Num% := MainGui["ShrineData" Num].Text
 			MainGui["ShrineData" Num].Text := StrReplace(ShrineData%Num%, SubStr(ShrineData%Num%, InStr(ShrineData%Num%, " ") + 1), "[" ((%k% = "Infinite") ? "∞" : %k%) "]")
 

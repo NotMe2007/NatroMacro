@@ -1,4 +1,17 @@
-﻿;Auryn Gathering Path
+﻿; --- Imports and variable setup for Auryn Gathering Path ---
+#Include ..\lib\Walk.ahk
+#Include ..\lib\HyperSleep.ahk
+
+; Key assignments (ensure these match your macro's config)
+TCFBKey := "w"
+TCLRKey := "a"
+AFCFBKey := "s"
+AFCLRKey := "d"
+
+; Default values for size and reps if not set externally
+size := IsSet(size) ? size : 1
+reps := IsSet(reps) ? reps : 1
+;Auryn Gathering Path
 AurynDelay:=175
 loop reps {
 	;infinity

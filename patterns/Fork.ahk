@@ -1,4 +1,24 @@
-﻿CForkGap:=0.75 ;flowers between lines
+﻿
+; Inline sqrt function for this pattern
+sqrt(x) {
+	return x ** 0.5
+}
+
+FwdKey := IsSet(FwdKey) ? FwdKey : "w"
+facingcorner := IsSet(facingcorner) ? facingcorner : 0
+#Include ..\lib\Walk.ahk
+#Include ..\lib\HyperSleep.ahk
+
+; Key assignments (ensure these match your macro's config)
+TCFBKey := "w"
+TCLRKey := "a"
+AFCFBKey := "s"
+AFCLRKey := "d"
+
+; Default values for size and reps if not set externally
+size := IsSet(size) ? size : 1
+reps := IsSet(reps) ? reps : 1
+CForkGap:=0.75 ;flowers between lines
 CForkDiagonal := CForkGap*sqrt(2)
 CForkLength := (40-CForkGap*16-CForkDiagonal*4)/6
 if(facingcorner) {
