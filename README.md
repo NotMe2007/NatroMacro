@@ -1,14 +1,50 @@
-# Natro Macro
+<!--
+  /\ \ \__ _| |_ _ __ ___     /\/\   __ _  ___ _ __ ___  
+ /  \/ / _` | __| '__/ _ \   /    \ / _` |/ __| '__/ _ \ 
+/ /\  / (_| | |_| | | (_) | / /\/\ \ (_| | (__| | | (_) |
+\_\ \/ \__,_|\__|_|  \___/  \/    \/\__,_|\___|_|  \___/                                                    
 
-![Natro Macro Logo](https://raw.githubusercontent.com/NatroTeam/.github/main/profile/assets/banners/natro-logo-dark.svg)
+Thanks for downloading Natro Macro!
 
-[![Latest Release][latest-release-shield]][latest-release-link] [![Downloads][downloads-shield]][downloads-link] [![Discord][discord-shield]][discord-link] [![Roblox][roblox-shield]][roblox-link]
+To start the macro, just open 'START.bat'!
 
-An open-source Bee Swarm Simulator macro written in AutoHotkey for automating gameplay and boosting productivity.
+If you need help or want to discuss, join our Discord server!
 
----
+Feel free to give us a Star on GitHub!
 
-## 🛠️ Installation
+IMPORTANT:
+Make sure you are only downloading from an official source!
+The only official sources are:
+ - our GitHub page (https://github.com/NatroTeam/NatroMacro)
+ - our Discord server (https://discord.gg/natromacro)
+
+>>> IGNORE BELOW THIS LINE <<<
+-->
+
+<!-- no offical site warning -->
+> [!CAUTION]
+> We do **not** have a website. The only offical place to download Natro Macro is this repository and [discord.gg/natromacro][discord-link].
+
+<div align="center">
+
+<!-- logo banner -->
+<picture>
+  <source width="200px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NatroTeam/.github/main/profile/assets/banners/natro-logo-light.svg"> <!-- light theme (black text) -->
+  <img src="https://raw.githubusercontent.com/NatroTeam/.github/main/profile/assets/banners/natro-logo-dark.svg"> <!-- dark theme (light text) -->
+</picture>
+<br>
+
+<!-- shields and contents -->
+[![][latest-release-shield]][latest-release-link]
+[![][downloads-shield]][downloads-link]
+[![][discord-shield]][discord-link]
+[![][roblox-shield]][roblox-link]
+<br>
+An open-source Bee Swarm Simulator macro written in AutoHotkey!<br>
+</div>
+
+
+<a name="installation"><h2>🛠️ Installation</h2></a>
 
 1. Download `Natro_Macro_v#.#.#.zip` from the [latest release][latest-release-link]
 2. Open `Natro_Macro_v#.#.#` and double-click the folder inside
