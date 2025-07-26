@@ -28,6 +28,14 @@ SetWorkingDir A_ScriptDir "\.."
 ; set version number
 version := "2.3"
 
+; Validate `pos` before performing substring operations
+if (InStr(pos, "|") > 0) {
+	x := SubStr(pos, 1, InStr(pos, "|")-1)+SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
+} else {
+	x := 0  ; Default value if `pos` is invalid
+	MsgBox "Error: pos does not contain the expected format."
+}
+
 ; ▰▰▰▰▰▰▰▰
 ; INITIAL SETUP
 ; ▰▰▰▰▰▰▰▰
@@ -1329,7 +1337,13 @@ SendHourlyReport()
 
 	Gdip_TextToGraphics(G, "Honey Earned", "s60 Right Bold ccfffffff x" stat_regions["lasthour"][1]+stat_regions["lasthour"][3]//2-40 " y" stat_regions["lasthour"][2]+96, "Segoe UI")
 	pos := Gdip_TextToGraphics(G, FormatNumber(honey_earned), "s60 Left Bold cffffffff x" stat_regions["lasthour"][1]+stat_regions["lasthour"][3]//2+40 " y" stat_regions["lasthour"][2]+96, "Segoe UI")
-	x := SubStr(pos, 1, InStr(pos, "|")-1)+SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
+	; Validate `pos` before performing substring operations
+	if (InStr(pos, "|") > 0) {
+		x := SubStr(pos, 1, InStr(pos, "|")-1)+SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
+	} else {
+		x := 0  ; Default value if `pos` is invalid
+		MsgBox, Error: `pos` does not contain the expected format.
+	}
 	pBrush := Gdip_BrushCreateSolid(hour_increase ? 0xff00ff00 : 0xffff0000), (x) && Gdip_FillPolygon(G, pBrush, hour_increase ? [[x+45, stat_regions["lasthour"][2]+119], [x+20, stat_regions["lasthour"][2]+161], [x+70, stat_regions["lasthour"][2]+161]] : [[x+20, stat_regions["lasthour"][2]+119], [x+70, stat_regions["lasthour"][2]+119], [x+45, stat_regions["lasthour"][2]+161]]), Gdip_DeleteBrush(pBrush)
 
 	Gdip_TextToGraphics(G, "Hourly Average", "s60 Right Bold ccfffffff x" stat_regions["lasthour"][1]+stat_regions["lasthour"][3]//2-40 " y" stat_regions["lasthour"][2]+180, "Segoe UI")
