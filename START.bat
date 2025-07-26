@@ -6,6 +6,12 @@ cd %~dp0
 
 :: Added: Enhanced startup validation and logging
 set "log_file=%~dp0debug_startup.log"
+
+:: Added: Delete old startup logs older than 3 days
+echo [%date% %time%] Deleting startup logs older than 3 days >> "%log_file%"
+forfiles /p "%~dp0" /m "debug_startup*.log" /d -3 /c "cmd /c del /q @path" 2>nul
+
+:: Added: START.bat initiated
 echo [%date% %time%] START.bat initiated > "%log_file%"
 
 :: Added: Check for existing processes to prevent conflicts

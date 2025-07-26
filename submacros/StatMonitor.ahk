@@ -28,14 +28,6 @@ SetWorkingDir A_ScriptDir "\.."
 ; set version number
 version := "2.3"
 
-; Validate `pos` before performing substring operations
-if (InStr(pos, "|") > 0) {
-	x := SubStr(pos, 1, InStr(pos, "|")-1)+SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
-} else {
-	x := 0  ; Default value if `pos` is invalid
-	MsgBox "Error: pos does not contain the expected format."
-}
-
 ; ▰▰▰▰▰▰▰▰
 ; INITIAL SETUP
 ; ▰▰▰▰▰▰▰▰
@@ -1341,8 +1333,8 @@ SendHourlyReport()
 	if (InStr(pos, "|") > 0) {
 		x := SubStr(pos, 1, InStr(pos, "|")-1)+SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
 	} else {
-		x := 0  ; Default value if `pos` is invalid
-		MsgBox, Error: `pos` does not contain the expected format.
+    x := 0  ; Default value if 'pos' is invalid
+    MsgBox("Error: 'pos' does not contain the expected format.")
 	}
 	pBrush := Gdip_BrushCreateSolid(hour_increase ? 0xff00ff00 : 0xffff0000), (x) && Gdip_FillPolygon(G, pBrush, hour_increase ? [[x+45, stat_regions["lasthour"][2]+119], [x+20, stat_regions["lasthour"][2]+161], [x+70, stat_regions["lasthour"][2]+161]] : [[x+20, stat_regions["lasthour"][2]+119], [x+70, stat_regions["lasthour"][2]+119], [x+45, stat_regions["lasthour"][2]+161]]), Gdip_DeleteBrush(pBrush)
 
@@ -1498,28 +1490,28 @@ SendHourlyReport()
 	{
 		i := 0
 		Loop 3
-		{
-			if (PlanterName%A_Index% = "None")
-				continue
+	{
+    if (PlanterName%A_Index% = "None")
+        continue
 
-			i++
-			Gdip_DrawImage(G, bitmaps["pBM" PlanterName%A_Index%], stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i-1)*440, stat_regions["planters"][2]+110, 220, 220)
+    i++
+    Gdip_DrawImage(G, bitmaps["pBM" PlanterName%A_Index%], stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i-1)*440, stat_regions["planters"][2]+110, 220, 220)
 
-			pos := Gdip_TextToGraphics(G, PlanterField%A_Index%, "s52 Center Bold cffffffff x" stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i-1)*440+74 " y" stat_regions["planters"][2]+340, "Segoe UI")
-			x := SubStr(pos, 1, InStr(pos, "|")-1)+SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
-			Gdip_DrawImage(G, bitmaps["pBM" ((PlanterNectar%A_Index% = "None") ? "Unknown" : PlanterNectar%A_Index%)], x+6, stat_regions["planters"][2]+348, 60, 60)
+    pos := Gdip_TextToGraphics(G, PlanterField%A_Index%, "s52 Center Bold cffffffff x" stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i-1)*440+74 " y" stat_regions["planters"][2]+340, "Segoe UI")
+    x := SubStr(pos, 1, InStr(pos, "|")-1) + SubStr(pos, InStr(pos, "|", InStr(pos, "|")+1)+1, InStr(pos, "|", InStr(pos, "|", InStr(pos, "|")+1)+1)-InStr(pos, "|", InStr(pos, "|")+1)-1)
+    Gdip_DrawImage(G, bitmaps["pBM" ((PlanterNectar%A_Index% = "None") ? "Unknown" : PlanterNectar%A_Index%)], x+6, stat_regions["planters"][2]+348, 60, 60)
 
-			MPlanterHold%i% := IniRead("settings\nm_config.ini", "Planters", "MPlanterHold" i)
-			MPlanterSmoking%i% := IniRead("settings\nm_config.ini", "Planters", "MPlanterSmoking" i)
-			PlanterMode := IniRead("settings\nm_config.ini", "Planters", "PlanterMode")
-			duration := ((time := PlanterHarvestTime%A_Index% - unix_now) > 360000) ? "N/A" : (time > 0) ? hmsFromSeconds(PlanterHarvestTime%A_Index% - unix_now) : (((MPlanterSmoking%i%) && (PlanterMode = 1)) ? "Smoking" : ((MPlanterHold%i%) && (PlanterMode = 1)) ? "Holding" :  "Ready")
-			pos := Gdip_TextToGraphics(G, duration, "s46 Center Bold ccfffffff x" stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i-1)*440+130 " y" stat_regions["planters"][2]+406, "Segoe UI")
-			x := SubStr(pos, 1, InStr(pos, "|")-1)
-			Gdip_DrawImage(G, bitmaps["pBMTimer"], x-60, stat_regions["planters"][2]+410, 56, 56, , , , , 0.811765)
+    MPlanterHold%i% := IniRead("settings\\nm_config.ini", "Planters", "MPlanterHold" i)
+    MPlanterSmoking%i% := IniRead("settings\\nm_config.ini", "Planters", "MPlanterSmoking" i)
+    PlanterMode := IniRead("settings\\nm_config.ini", "Planters", "PlanterMode")
+    duration := ((time := PlanterHarvestTime%A_Index% - unix_now) > 360000) ? "N/A" : (time > 0) ? DurationFromSeconds(PlanterHarvestTime%A_Index% - unix_now) : (((MPlanterSmoking%i%) && (PlanterMode = 1)) ? "Smoking" : ((MPlanterHold%i%) && (PlanterMode = 1)) ? "Holding" : "Ready")
+    pos := Gdip_TextToGraphics(G, duration, "s46 Center Bold ccfffffff x" stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i-1)*440+130 " y" stat_regions["planters"][2]+406, "Segoe UI")
+    x := SubStr(pos, 1, InStr(pos, "|")-1)
+    Gdip_DrawImage(G, bitmaps["pBMTimer"], x-60, stat_regions["planters"][2]+410, 56, 56, , , , , 0.811765)
 
-			if (i >= planters)
-				break
-		}
+    if (i >= planters)
+        break
+}
 		Loop (planters - i)
 		{
 			Gdip_DrawImage(G, bitmaps["pBMUnknown"], stat_regions["planters"][1]+stat_regions["planters"][3]//2-(110+220*(planters-1))+(i+A_Index-1)*440, stat_regions["planters"][2]+110, 220, 220)

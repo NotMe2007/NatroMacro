@@ -5,6 +5,11 @@ import pyautogui
 from datetime import datetime
 import win32gui
 import win32con
+import logging
+import argparse
+
+# Configure logger
+logger = logging.getLogger(__name__)
 
 class RobloxScreenshotMonitor:
     def __init__(self, save_directory="D:\\Digital_Printers_Images"):
@@ -14,7 +19,7 @@ class RobloxScreenshotMonitor:
         # Create save directory if it doesn't exist
         if not os.path.exists(self.save_directory):
             os.makedirs(self.save_directory)
-            print(f"Created directory: {self.save_directory}")
+            logger.info(f"Created directory: {self.save_directory}")
     
     def is_natro_macro_running(self):
         """Check if Natro Macro process is running"""
@@ -53,7 +58,7 @@ class RobloxScreenshotMonitor:
             roblox_hwnd = self.find_roblox_window()
             
             if not roblox_hwnd:
-                print("Roblox window not found, taking full screen screenshot")
+                logger.warning("Roblox window not found, taking full screen screenshot")
                 screenshot = pyautogui.screenshot()
             else:
                 # Get window position and size
@@ -76,36 +81,36 @@ class RobloxScreenshotMonitor:
             
             # Save screenshot
             screenshot.save(filepath)
-            print(f"Screenshot saved: {filename}")
+            logger.info(f"Screenshot saved: {filename}")
             
         except Exception as e:
-            print(f"Error capturing screenshot: {e}")
+            logger.error(f"Error capturing screenshot: {e}")
     
     def start_monitoring(self):
         """Start the monitoring loop"""
-        print("Starting Roblox Screenshot Monitor...")
-        print(f"Screenshots will be saved to: {self.save_directory}")
-        print("Waiting for Natro Macro to start...")
+        logger.info("Starting Roblox Screenshot Monitor...")
+        logger.info(f"Screenshots will be saved to: {self.save_directory}")
+        logger.info("Waiting for Natro Macro to start...")
         
         self.running = True
         
         while self.running:
             try:
                 if self.is_natro_macro_running():
-                    print("Natro Macro detected - taking screenshot...")
+                    logger.info("Natro Macro detected - taking screenshot...")
                     self.capture_roblox_screenshot()
-                    print("Waiting 30 seconds for next screenshot...")
+                    logger.info("Waiting 30 seconds for next screenshot...")
                     time.sleep(30)
                 else:
-                    print("Natro Macro not running, checking again in 5 seconds...")
+                    logger.info("Natro Macro not running, checking again in 5 seconds...")
                     time.sleep(5)
                     
             except KeyboardInterrupt:
-                print("\nStopping screenshot monitor...")
+                logger.info("\nStopping screenshot monitor...")
                 self.running = False
                 break
             except Exception as e:
-                print(f"Error in monitoring loop: {e}")
+                logger.error(f"Error in monitoring loop: {e}")
                 time.sleep(5)
     
     def stop_monitoring(self):
@@ -120,15 +125,26 @@ def main():
     print("3. Save screenshots to D:\\Digital_Printers_Images")
     print("4. Press Ctrl+C to stop\n")
     
-    monitor = RobloxScreenshotMonitor()
+    parser = argparse.ArgumentParser(description="Roblox Screenshot Monitor for Natro Macro")
+    parser.add_argument("--save-dir", type=str, default="D:\\Digital_Printers_Images", help="Directory to save screenshots")
+    parser.add_argument("--interval", type=int, default=30, help="Screenshot interval in seconds")
+    parser.add_argument("--debug", action="store_true", help="Enable debug logging")
+    
+    args = parser.parse_args()
+    
+    # Configure logging
+    log_level = logging.DEBUG if args.debug else logging.INFO
+    logging.basicConfig(level=log_level, format="%(asctime)s - %(levelname)s - %(message)s")
+    
+    monitor = RobloxScreenshotMonitor(save_directory=args.save_dir)
     
     try:
         monitor.start_monitoring()
     except KeyboardInterrupt:
-        print("\nShutting down...")
+        logger.info("\nShutting down...")
     finally:
         monitor.stop_monitoring()
-        print("Screenshot monitor stopped.")
+        logger.info("Screenshot monitor stopped.")
 
 if __name__ == "__main__":
     main()

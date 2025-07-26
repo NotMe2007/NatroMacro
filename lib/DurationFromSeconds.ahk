@@ -32,3 +32,20 @@ DurationFromSeconds(secs, format:="hh:mm:ss", capacity:=64) {
     
     return StrGet(dur)
 }
+
+/*****************************************************************************************
+* @description: Simple function to format seconds to h:m:s format for backward compatibility
+* @param secs: The duration in seconds (integer or float).
+* @return: A formatted duration string in "h:m:s" format.
+*****************************************************************************************/
+hmsFromSeconds(secs) {
+    if (secs < 0) {
+        return "0:0:0"
+    }
+    
+    hours := Floor(secs / 3600)
+    minutes := Floor((secs - hours * 3600) / 60)
+    seconds := Floor(secs - hours * 3600 - minutes * 60)
+    
+    return hours ":" minutes ":" seconds
+}

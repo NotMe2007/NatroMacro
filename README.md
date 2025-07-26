@@ -1,73 +1,26 @@
-<!--
-  /\ \ \__ _| |_ _ __ ___     /\/\   __ _  ___ _ __ ___  
- /  \/ / _` | __| '__/ _ \   /    \ / _` |/ __| '__/ _ \ 
-/ /\  / (_| | |_| | | (_) | / /\/\ \ (_| | (__| | | (_) |
-\_\ \/ \__,_|\__|_|  \___/  \/    \/\__,_|\___|_|  \___/                                                    
+# Natro Macro
 
-Thanks for downloading Natro Macro!
+![Natro Macro Logo](https://raw.githubusercontent.com/NatroTeam/.github/main/profile/assets/banners/natro-logo-dark.svg)
 
-To start the macro, just open 'START.bat'!
+[![Latest Release][latest-release-shield]][latest-release-link] [![Downloads][downloads-shield]][downloads-link] [![Discord][discord-shield]][discord-link] [![Roblox][roblox-shield]][roblox-link]
 
-If you need help or want to discuss, join our Discord server!
+An open-source Bee Swarm Simulator macro written in AutoHotkey for automating gameplay and boosting productivity.
 
-Feel free to give us a Star on GitHub!
+---
 
-IMPORTANT:
-Make sure you are only downloading from an official source!
-The only official sources are:
- - our GitHub page (https://github.com/NatroTeam/NatroMacro)
- - our Discord server (https://discord.gg/natromacro)
-
->>> IGNORE BELOW THIS LINE <<<
--->
-
-<!-- no official site warning -->
-> [!CAUTION]
-> We do **not** have a website. The only official place to download Natro Macro is this repository and [discord.gg/natromacro][discord-link].
-
-<div align="center">
-
-<!-- logo banner -->
-<picture>
-  <source width="200px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NatroTeam/.github/main/profile/assets/banners/natro-logo-light.svg"> <!-- light theme (black text) -->
-  <img src="https://raw.githubusercontent.com/NatroTeam/.github/main/profile/assets/banners/natro-logo-dark.svg"> <!-- dark theme (light text) -->
-</picture>
-<br>
-
-<!-- shields and contents -->
-[![][latest-release-shield]][latest-release-link]
-[![][downloads-shield]][downloads-link]
-[![][discord-shield]][discord-link]
-[![][roblox-shield]][roblox-link]
-<br>
-An open-source Bee Swarm Simulator macro written in AutoHotkey!<br>
-</div>
-
-
-<a name="installation"><h2>🛠️ Installation</h2></a>
+## 🛠️ Installation
 
 1. Download `Natro_Macro_v#.#.#.zip` from the [latest release][latest-release-link]
 2. Open `Natro_Macro_v#.#.#` and double-click the folder inside
 3. Run `START.bat` and wait for the macro to load
 
 
-<a name="community"><h2>🌎 Community</h2></a>
+## 🌎 Community
 
-[**Join us on Discord!**][discord-link]
-
-This is where you can connect with the community, access guides and help channels, and download custom patterns, paths, and themes!
-
-Discord is our primary platform for troubleshooting and receiving update news.
-
-<a href="https://discord.gg/natromacro">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="http://invidget.switchblade.xyz/natromacro?theme=light"> <!-- light theme -->
-    <img alt="discord-invite-widget" width=500 src="http://invidget.switchblade.xyz/natromacro"> <!-- dark theme -->
-  </picture>
-</a>
+Join our [Discord Server][discord-link] for community support, guides, and sharing custom patterns, paths, and themes.
 
 
-<a name="contributing"><h2>⌨️ Contributing</h2></a>
+## ⌨️ Contributing
 
 Natro Macro is an open-source project. We greatly appreciate all contributions, whether you are helping us fix bugs or suggesting new features. If you want to get started, read our [Contributing Guidelines][contributing-link] first.
 
@@ -77,32 +30,24 @@ Natro Macro is an open-source project. We greatly appreciate all contributions, 
 For discussions, please join us on [Discord][discord-link] instead!
 
 
-<a name="credits"><h2>💝 Credits</h2></a>
+## 💝 Credits
 
-Natro Macro wouldn't be possible without the help and inspiration of many extraordinary individuals.<br>
-We want to show our gratitude to all of you, so please check out our [list of credits][credits-link]!
-
-Thank you all for your hard work and support!
+Natro Macro wouldn't be possible without the help and inspiration of many extraordinary individuals. Check out our [Credits page][credits-link] to see all contributors.
 
 
-<a name="stars"><h2>🌠 Stars</h2></a>
+## 🌠 Show Some Love
 
-If Natro Macro helped you, let us know by giving it a ⭐ $\color{yellow}{\textsf{Star}}$ on GitHub!<br>
-You can do this by scrolling up and clicking the Star button at the top of the page!
+## 🌠 Stars
 
-<a href="https://github.com/NatroTeam/NatroMacro/stargazers">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="http://reporoster.com/stars/NatroTeam/NatroMacro"> <!-- light theme -->
-    <img alt="stargazer-widget" src="http://reporoster.com/stars/dark/NatroTeam/NatroMacro"> <!-- dark theme -->
-  </picture>
-</a>
+[![Stars][stars-badge]][stars-link]
+
+Enjoying the project? Show your support by giving us a ⭐ on GitHub!
 
 
-<a name="license"><details><summary><h4>📝 License</h4></summary></a>
-Copyright © 2022-2024 [Natro Team][github-profile-link]<br>
+## 📝 License
+
+Copyright © 2022-2024 [Natro Team][github-profile-link]
 This project is licensed under [GNU GPL v3.0](./LICENSE.md)
-
-</details>
 
 <!-- links -->
 [latest-release-shield]: https://img.shields.io/github/v/release/NatroTeam/NatroMacro?logo=github&logoColor=white&labelColor=black&color=faa125
@@ -118,4 +63,5 @@ This project is licensed under [GNU GPL v3.0](./LICENSE.md)
 [bug-report-link]: https://github.com/NatroTeam/NatroMacro/issues/new?assignees=&labels=bug%2Cneeds+triage&projects=&template=bug.yml
 [suggestion-link]: https://github.com/NatroTeam/NatroMacro/issues/new?assignees=&labels=suggestion%2Cneeds+triage&projects=&template=suggestion.yml
 [github-profile-link]: http://github.com/NatroTeam
-[discord-banner-link]: https://invidget.switchblade.xyz/natromacro
+[stars-badge]: https://img.shields.io/github/stars/NatroTeam/NatroMacro?style=social
+[stars-link]: https://github.com/NatroTeam/NatroMacro/stargazers

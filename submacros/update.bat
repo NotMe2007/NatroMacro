@@ -9,6 +9,10 @@ set "update_log=%temp%\natro_update.log"
 echo [%date% %time%] Update process started > "%update_log%"
 echo [%date% %time%] Parameters: %1 %2 %3 %4 %5 %6 %7 >> "%update_log%"
 
+:: Added: Delete old update log files older than 3 days
+echo [%date% %time%] Deleting update logs older than 3 days >> "%update_log%"
+forfiles /p "%temp%" /m "natro_update*.log" /d -3 /c "cmd /c del /q @path" 2>nul
+
 :: ANSI color codes
 :: Added: Color code validation to prevent script errors
 for /f "delims=#" %%E in ('"prompt #$E# & for %%E in (1) do rem"') do set "\e=%%E"
