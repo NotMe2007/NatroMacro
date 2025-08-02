@@ -14,15 +14,15 @@ You should have received a copy of the license along with Natro Macro. If not, p
 #SingleInstance Force
 #NoTrayIcon
 
-#Include "%A_ScriptDir%\..\lib\Gdip_All.ahk"
-#Include "%A_ScriptDir%\..\lib\Gdip_ImageSearch.ahk"
-#Include "%A_ScriptDir%\..\lib\Roblox.ahk"
-#Include "%A_ScriptDir%\..\lib\DurationFromSeconds.ahk"
-#Include "%A_ScriptDir%\..\lib\nowUnix.ahk"
+#Include "%A_ScriptDir%/../lib/Gdip_All.ahk"
+#Include "%A_ScriptDir%/../lib/Gdip_ImageSearch.ahk"
+#Include "%A_ScriptDir%/../lib/Roblox.ahk"
+#Include "%A_ScriptDir%/../lib/DurationFromSeconds.ahk"
+#Include "%A_ScriptDir%/../lib/nowUnix.ahk"
 
 OnError (e, mode) => (mode = "Return") ? -1 : 0
 DetectHiddenWindows 1
-SetWorkingDir A_ScriptDir "\.."
+SetWorkingDir A_ScriptDir "/.."
 
 ; check for the correct AHK version before starting
 if (A_PtrSize != 4)
@@ -71,7 +71,7 @@ OnExit(ba_timersExit)
 
 ;Blender/shrine images
 hBitmapsSBT := Map()
-#Include "%A_ScriptDir%\..\nm_image_assets\gui\blendershrine_bitmaps.ahk"
+#Include "%A_ScriptDir%/../nm_image_assets/gui/blendershrine_bitmaps.ahk"
 
 (hBitmapsSB := Map()).CaseSense := false
 for x,y in hBitmapsSBT

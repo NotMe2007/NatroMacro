@@ -519,7 +519,7 @@ FieldRotateTimes3 := IsSet(FieldRotateTimes3) ? FieldRotateTimes3 : 1
 #MaxThreads 255
 #Requires AutoHotkey v2.0
 #SingleInstance Force
-#Include "%A_ScriptDir%\..\lib"
+#Include "%A_ScriptDir%/../lib"
 #Include "Gdip_All.ahk"
 #Include "Gdip_ImageSearch.ahk"
 #Include "JSON.ahk"
@@ -533,8 +533,9 @@ FieldRotateTimes3 := IsSet(FieldRotateTimes3) ? FieldRotateTimes3 : 1
 OnError (e, mode) => (mode = "Return") ? -1 : 0
 
 global IgnoreUpdateVersion := ""
+global windowX := 0, windowY := 0, windowWidth := 0, windowHeight := 0
 
-SetWorkingDir A_ScriptDir "\.."
+SetWorkingDir A_ScriptDir "/.."
 CoordMode "Mouse", "Screen"
 CoordMode "Pixel", "Screen"
 SendMode "Event"
@@ -1969,7 +1970,7 @@ CommandoChickHealth := Map(3, 150
 	, 18, 5000000
 	, 19, 7500000)
 
-#Include "data\memorymatch.ahk"
+#Include "%A_ScriptDir%/../lib/data/memorymatch.ahk"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; FIELD DEFAULT OVERRIDES
@@ -2545,27 +2546,27 @@ Run
 bitmaps := Map(), bitmaps.CaseSense := 0
 shrine := Map(), shrine.CaseSense := 0
 hBitmapsSBT := Map(), hBitmapsSBT.CaseSense := 0
-#Include "%A_ScriptDir%\..\nm_image_assets"
-#Include "general\bitmaps.ahk"
-#Include "gui\bitmaps.ahk"
-#Include "beemenu\bitmaps.ahk"
-#Include "buffs\bitmaps.ahk"
-#Include "convert\bitmaps.ahk"
-#Include "collect\bitmaps.ahk"
-#Include "kill\bitmaps.ahk"
-#Include "boost\bitmaps.ahk"
-#Include "inventory\bitmaps.ahk"
-#Include "reconnect\bitmaps.ahk"
-#Include "fdc\bitmaps.ahk"
-#Include "offset\bitmaps.ahk"
-#Include "perfstats\bitmaps.ahk"
-#Include "gui\blendershrine_bitmaps.ahk"
-#Include "quests\bitmaps.ahk"
-#Include "sprinkler\bitmaps.ahk"
-#Include "stickerstack\bitmaps.ahk"
-#Include "stickerprinter\bitmaps.ahk"
-#Include "memorymatch\bitmaps.ahk"
-#include "reset\bitmaps.ahk"
+#Include "%A_ScriptDir%/../nm_image_assets"
+#Include "general/bitmaps.ahk"
+#Include "gui/bitmaps.ahk"
+#Include "beemenu/bitmaps.ahk"
+#Include "buffs/bitmaps.ahk"
+#Include "convert/bitmaps.ahk"
+#Include "collect/bitmaps.ahk"
+#Include "kill/bitmaps.ahk"
+#Include "boost/bitmaps.ahk"
+#Include "inventory/bitmaps.ahk"
+#Include "reconnect/bitmaps.ahk"
+#Include "fdc/bitmaps.ahk"
+#Include "offset/bitmaps.ahk"
+#Include "perfstats/bitmaps.ahk"
+#Include "gui/blendershrine_bitmaps.ahk"
+#Include "quests/bitmaps.ahk"
+#Include "sprinkler/bitmaps.ahk"
+#Include "stickerstack/bitmaps.ahk"
+#Include "stickerprinter/bitmaps.ahk"
+#Include "memorymatch/bitmaps.ahk"
+#include "reset/bitmaps.ahk"
 
 (hBitmapsSB := Map()).CaseSense := 0
 for x,y in hBitmapsSBT
@@ -10378,7 +10379,7 @@ nm_Start(){
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-#Include "%A_ScriptDir%\..\lib"
+#Include "%A_ScriptDir%/../lib"
 #Include "nm_OpenMenu.ahk"
 #Include "nm_InventorySearch.ahk"
 ;interrupts
